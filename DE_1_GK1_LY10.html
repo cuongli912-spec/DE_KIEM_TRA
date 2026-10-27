@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đề 1 ôn tập giữa học kì I – Vật lí 10 (mỗi trang một câu)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{--bg:#eef1f5;--pp:#fff;--ink:#17202b;--mut:#566274;--acc:#1d4e89;--ok:#17703f;--okb:#e1f4e8;--no:#b3261e;--nob:#fbe6e3;--ln:#cfd7e2;--tn:#f2f5f9;--fs:clamp(28px,2.7vw,40px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1318;--pp:#181e26;--ink:#e8ecf2;--mut:#a0acbc;--acc:#8dbaf0;--ok:#6fdca0;--okb:#143324;--no:#ff9a91;--nob:#3b1b19;--ln:#303a47;--tn:#202833;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1318;--pp:#181e26;--ink:#e8ecf2;--mut:#a0acbc;--acc:#8dbaf0;--ok:#6fdca0;--okb:#143324;--no:#ff9a91;--nob:#3b1b19;--ln:#303a47;--tn:#202833;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Source Serif 4","Times New Roman",serif}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;background:var(--pp);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top,0px)}
+.tr{display:flex;align-items:center;gap:10px;padding:8px 14px;max-width:1240px;margin:0 auto}
+.tt{flex:1;min-width:0;font-weight:600;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tt span{color:var(--mut);font-weight:400}
+.ib{border:1px solid var(--ln);background:var(--tn);border-radius:8px;padding:6px 12px;font-size:17px}
+.pb{height:5px;background:var(--ln)}.pb i{display:block;height:100%;width:0;background:var(--acc);transition:width .25s}
+main{max-width:1240px;margin:0 auto;padding:22px 28px 140px}
+.pg{font-size:var(--fs);line-height:1.5}
+.ph{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:14px;font-size:20px;color:var(--mut)}
+.pt{background:var(--acc);color:var(--pp);border-radius:99px;padding:2px 16px;font-weight:600;font-size:20px}
+.lv{font-size:17px;padding:1px 12px;border:1px solid var(--acc);border-radius:99px;color:var(--acc);font-family:system-ui,sans-serif}
+.qt{margin:0 0 .5em}
+.cols.hasg{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:start}
+.side{position:sticky;top:100px}
+@media(max-width:1000px){.cols.hasg{display:block}.side{position:static}}
+.g{display:block;width:100%;max-width:640px;margin:10px auto;background:var(--pp);border:1px solid var(--ln);border-radius:10px}
+.g line{stroke-width:1}.gl{stroke:var(--ln)}.ga{stroke:var(--mut)}
+.gp{fill:none;stroke:var(--acc);stroke-width:2.2}.gd{fill:var(--acc)}
+.gt{fill:var(--mut);font:10px system-ui,sans-serif}
+.o{display:grid;grid-template-columns:1.7em 1fr 1.2em;align-items:start;gap:.4em;width:100%;text-align:left;margin:.4em 0;padding:.4em .7em;background:var(--tn);border:2px solid var(--ln);border-radius:14px}
+.o:not(:disabled):hover{border-color:var(--acc)}
+.o b{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;border:2px solid var(--acc);color:var(--acc);font-size:.8em;margin-top:.12em}
+.o:disabled{cursor:default;color:inherit;opacity:1}
+.o.ok,.stb button.ok{background:var(--okb);border-color:var(--ok)}
+.o.no,.stb button.no{background:var(--nob);border-color:var(--no)}
+.o.ok b{background:var(--ok);border-color:var(--ok);color:var(--pp)}
+.o.no b{background:var(--no);border-color:var(--no);color:var(--pp)}
+.mk{font-style:normal;font-weight:700}
+.o.ok .mk{color:var(--ok)}.o.no .mk{color:var(--no)}
+.fb{margin:.7em 0 0;padding:.5em .9em;border-left:6px solid var(--ok);background:var(--okb);border-radius:8px}
+.fb.no{border-left-color:var(--no);background:var(--nob)}
+.fb p{margin:.3em 0 0}
+.fb small{display:block;margin-top:.5em;font-size:17px;color:var(--mut);font-style:italic}
+.st{margin:.55em 0;padding:.45em .8em;border:2px solid var(--ln);border-left-width:8px;border-radius:12px;background:var(--tn)}
+.st.ok{border-color:var(--ok);background:var(--okb)}.st.no{border-color:var(--no);background:var(--nob)}
+.stb{display:flex;gap:12px;margin:.35em 0 .1em}
+.stb button{padding:.15em 1.2em;border:2px solid var(--acc);border-radius:10px;background:var(--pp)}
+.stb button:not(:disabled):hover{background:var(--tn)}
+.stb button:disabled{cursor:default;opacity:.55}
+.stb button.ok,.stb button.no{opacity:1;font-weight:700}
+.ex{margin:.35em 0 0}
+.st.ok .ex b.v{color:var(--ok)}.st.no .ex b.v{color:var(--no)}
+.sar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:.6em 0}
+.sa{font:inherit;color:inherit;width:6.5em;padding:.2em .5em;border:3px solid var(--ln);border-radius:12px;background:var(--pp)}
+.sa.ok{border-color:var(--ok);background:var(--okb)}.sa.no{border-color:var(--no);background:var(--nob)}
+.btn{padding:.2em 1.1em;border:2px solid var(--acc);border-radius:12px;background:var(--acc);color:var(--pp);font-weight:600}
+.btn.sec{background:transparent;color:var(--acc)}
+textarea{display:block;width:100%;min-height:3.2em;font:inherit;color:inherit;background:var(--pp);border:2px solid var(--ln);border-radius:12px;padding:.3em .6em;margin:.3em 0 .6em;resize:vertical}
+.tb{border-collapse:collapse;margin:.4em 0}.tb th,.tb td{border:2px solid var(--ln);padding:.05em .7em;text-align:center}
+.sub{margin:.6em 0 .1em}
+.tlx{margin:.2em 0 .5em;padding:.4em .8em;border-left:6px solid var(--acc);background:var(--tn);border-radius:8px}
+.hd{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:center;border-bottom:2px solid var(--ink);padding-bottom:12px;font-size:20px}
+.hd b{display:block}.hd small{display:block;color:var(--mut);font-size:17px}
+.cv h1{font-size:1.15em;text-align:center;margin:.7em 0 .1em;color:var(--acc)}
+.cv ul{margin:.4em 0 .8em;padding-left:1.1em}
+.big{display:block;margin:.8em auto 0;padding:.25em 1.6em}
+.sc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:.7em 0}
+.sc div{padding:.4em .8em;border:2px solid var(--ln);border-radius:12px;background:var(--tn)}
+.sc b{display:block;font-size:1.3em;color:var(--acc)}
+.rv{display:flex;flex-wrap:wrap;gap:8px;margin:.4em 0}
+.rv button{font-size:20px;padding:4px 14px;border:2px solid var(--no);border-radius:10px;background:var(--nob)}
+.bot{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--pp);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px)}
+.br{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1240px;margin:0 auto;padding:10px 14px}
+.br .btn{font-size:22px;padding:6px 22px}
+.br .btn:disabled{opacity:.35;cursor:default}
+.bl{font-size:19px;color:var(--mut);text-align:center}
+.ov{position:fixed;inset:0;z-index:40;background:rgba(10,14,20,.6);display:none;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.pn{background:var(--pp);border-radius:14px;max-width:760px;width:100%;max-height:88vh;overflow:auto;padding:16px 20px;font-size:18px}
+.pn h3{margin:.8em 0 .3em;font-size:18px;color:var(--acc)}
+.cells{display:flex;flex-wrap:wrap;gap:8px}
+.cells button{width:52px;height:46px;border:2px solid var(--ln);border-radius:10px;background:var(--tn);font-size:18px}
+.cells button.ok{background:var(--okb);border-color:var(--ok)}.cells button.no{background:var(--nob);border-color:var(--no)}.cells button.part{border-color:var(--acc);border-style:dashed}
+.cells button.cur{outline:3px solid var(--acc)}
+@media(max-width:560px){main{padding:16px 14px 140px}.hd{grid-template-columns:1fr}.tt span{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="tr"><button class="ib" id="menu" aria-label="Danh sách câu hỏi">☰ Câu hỏi</button><div class="tt" id="tt"></div><button class="ib" id="th" aria-label="Chế độ tối">🌙</button></div><div class="pb"><i id="pg"></i></div></header>
+<main id="app"></main>
+<footer class="bot"><div class="br"><button class="btn" id="pv">◀ Trước</button><div class="bl" id="bl"></div><button class="btn" id="nx">Sau ▶</button></div></footer>
+<div class="ov" id="ov"><div class="pn" id="pn"></div></div>
+<script>
+const $=s=>document.querySelector(s),f=n=>n.toFixed(2).replace(".",",");
+function G(p,xm,ym,yn,xs,ys){const w=320,h=200,L=36,T=10,B=26,R=12,W=w-L-R,H=h-T-B,X=t=>L+t/xm*W,Y=d=>T+(ym-d)/(ym-yn)*H;
+let s=`<svg class=g viewBox="0 0 ${w} ${h}" role=img aria-label="Đồ thị độ dịch chuyển – thời gian">`;
+for(let t=0;t<=xm;t+=xs)s+=`<line class=${t?"gl":"ga"} x1=${X(t)} y1=${T} x2=${X(t)} y2=${T+H}></line><text class=gt x=${X(t)} y=${h-10} text-anchor=middle>${t}</text>`;
+for(let d=yn;d<=ym;d+=ys)s+=`<line class=${d?"gl":"ga"} x1=${L} y1=${Y(d)} x2=${L+W} y2=${Y(d)}></line><text class=gt x=${L-5} y=${Y(d)+4} text-anchor=end>${d}</text>`;
+return s+`<polyline class=gp points="${p.map(q=>X(q[0])+","+Y(q[1])).join(" ")}"></polyline>`+p.map(q=>`<circle class=gd cx=${X(q[0])} cy=${Y(q[1])} r=3></circle>`).join("")+`<text class=gt x=${w-4} y=${Y(0)-5} text-anchor=end>t (s)</text><text class=gt x=${L+6} y=${T+10}>d (m)</text></svg>`}
+const g1=()=>G([[0,0],[4,8],[6,8],[10,-4]],10,8,-4,2,4),g2=()=>G([[0,0],[4,6],[6,6],[8,2]],8,6,0,2,2),g3=()=>G([[0,0],[1,3],[5,15]],5,15,0,1,3),g4=()=>G([[0,0],[4,8],[6,8],[10,0]],10,8,0,2,2);
+
+const MC=[
+["Biết","Nêu được đối tượng nghiên cứu của Vật lí học","Đối tượng nghiên cứu của Vật lí học là các dạng vận động của",["sinh vật và môi trường sống.","chất, trường và năng lượng.","chỉ các chất ở thể rắn.","các hiện tượng xã hội."],1],
+["Biết","Nhận biết các bước tìm hiểu thế giới tự nhiên dưới góc độ vật lí","Trong tiến trình tìm hiểu thế giới tự nhiên dưới góc độ vật lí, sau bước “Đưa ra dự đoán” là bước",["Kết luận.","Quan sát, thu thập thông tin.","Thí nghiệm kiểm tra dự đoán.","Xác định vấn đề cần nghiên cứu."],2],
+["Biết","Nhận biết quy tắc an toàn trong học tập môn Vật lí","Trước khi cắm hoặc tháo một thiết bị điện khỏi ổ cắm, việc cần làm đúng là",["tắt công tắc nguồn của thiết bị.","giữ tay ướt để bám chắc phích cắm.","kéo mạnh dây điện để rút cho nhanh.","bật công tắc ở mức lớn nhất."],0],
+["Biết","Chỉ ra đơn vị cơ bản và đơn vị dẫn xuất của hệ SI","Đơn vị nào sau đây KHÔNG phải là đơn vị cơ bản của hệ SI?",["kilôgam (kg).","mét (m).","giây (s).","niutơn (N)."],3],
+["Biết","Định nghĩa được độ dịch chuyển","Đại lượng vừa cho biết độ dài, vừa cho biết hướng của sự thay đổi vị trí của vật gọi là",["quãng đường đi được.","tốc độ trung bình.","độ dịch chuyển.","thời gian chuyển động."],2],
+["Biết","Nhận biết dụng cụ đo tốc độ trong phòng thí nghiệm","Để đo tốc độ tức thời của viên bi lăn trên máng nghiêng tại một vị trí xác định, bộ dụng cụ phù hợp là",["lực kế và thước dây.","cổng quang điện và đồng hồ đo thời gian hiện số.","nhiệt kế và đồng hồ treo tường.","vôn kế và ampe kế."],1],
+["Hiểu","Phân biệt các loại mô hình trong nghiên cứu vật lí","Khi nghiên cứu chuyển động của ô tô trên quãng đường dài hàng trăm km, người ta coi ô tô là một chất điểm. Chất điểm thuộc loại mô hình nào?",["Mô hình lí thuyết.","Mô hình vật chất (vật thu nhỏ hoặc phóng to).","Mô hình toán học.","Không phải là mô hình."],0,"Chất điểm là khái niệm được trừu tượng hóa nên là mô hình lí thuyết."],
+["Hiểu","Lập luận về quy tắc an toàn, nguy cơ cháy nổ","Vì sao không được dùng nước để dập đám cháy xảy ra ở thiết bị điện đang có điện?",["Vì nước bay hơi quá nhanh nên không dập được lửa.","Vì nước làm đám cháy lan rộng hơn.","Vì nước làm thiết bị nguội quá nhanh.","Vì nước dẫn điện, người dập lửa có nguy cơ bị điện giật."],3,"Nước dẫn điện nên có nguy cơ điện giật; phải ngắt nguồn điện trước."],
+["Hiểu","Lập luận nêu loại sai số và cách khắc phục","Một học sinh dùng đồng hồ bấm giây đo thời gian rơi của vật, các lần bấm lệch nhau do phản xạ của tay. Đây là loại sai số nào và cách hạn chế hiệu quả nhất là gì?",["Sai số hệ thống; hiệu chỉnh lại điểm 0 của đồng hồ.","Sai số ngẫu nhiên; đo nhiều lần rồi lấy giá trị trung bình.","Sai số hệ thống; đo nhiều lần rồi lấy giá trị trung bình.","Sai số ngẫu nhiên; chỉ đo một lần bằng đồng hồ có độ chia nhỏ hơn."],1,"Thao tác bấm không đều gây sai số ngẫu nhiên, khắc phục bằng đo nhiều lần lấy trung bình."],
+["Hiểu","Hiểu đơn vị dẫn xuất của hệ SI","Lực hấp dẫn giữa hai chất điểm: F = G·m₁·m₂/r². Phát biểu nào sau đây về đơn vị của hằng số G trong hệ SI là đúng?",["G có đơn vị cơ bản riêng của hệ SI, không liên quan đến đơn vị của F, m, r.", "Đơn vị của G chỉ phụ thuộc vào đơn vị của khối lượng m₁ và m₂.", "Đơn vị của G là đơn vị dẫn xuất, được suy ra từ công thức bằng cách biểu diễn G theo F, m₁, m₂ và r.", "Đơn vị của G không thể xác định từ công thức mà chỉ có được bằng thực nghiệm."],2,"G = F·r²/(m₁m₂) nên đơn vị của G suy ra từ đơn vị của F, r, m: N·m²/kg² = m³·kg⁻¹·s⁻². Đây là đơn vị dẫn xuất."],
+["Hiểu","So sánh quãng đường đi được và độ dịch chuyển","Một con kiến bò dọc theo thước thẳng từ vạch 5 cm đến vạch 35 cm rồi quay lại vạch 20 cm. Nhận định nào sau đây về quãng đường đi được và độ dịch chuyển của kiến là đúng?",["Quãng đường đi được lớn hơn độ lớn độ dịch chuyển vì kiến đã đổi chiều chuyển động.", "Quãng đường đi được bằng độ lớn độ dịch chuyển vì kiến bò trên đường thẳng.", "Độ lớn độ dịch chuyển lớn hơn quãng đường đi được vì độ dịch chuyển có hướng.", "Độ dịch chuyển bằng tổng độ dài các đoạn kiến đã bò, không phụ thuộc vào vị trí đầu và cuối."],0,"s = 30 + 15 = 45 cm; d = 20 − 5 = 15 cm. Kiến đổi chiều nên s > |d|. Đi trên đường thẳng mà đổi chiều thì s vẫn lớn hơn |d|."],
+["Hiểu","Tính và so sánh tốc độ trung bình (một thao tác tư duy)","Một xe chạy trên đường thẳng: nửa quãng đường đầu với tốc độ 30 km/h, nửa quãng đường sau với tốc độ 60 km/h. Nhận định nào sau đây về tốc độ trung bình của xe trên cả quãng đường là đúng?",["Bằng trung bình cộng của hai tốc độ vì hai nửa quãng đường bằng nhau.", "Nhỏ hơn trung bình cộng của hai tốc độ vì xe mất nhiều thời gian hơn ở nửa quãng đường đi chậm.", "Lớn hơn trung bình cộng của hai tốc độ vì xe đi nhanh ở nửa quãng đường sau.", "Bằng tốc độ lớn nhất vì tốc độ trung bình luôn được tính theo giai đoạn đi nhanh nhất."],1,"v = s/(s/60 + s/120) = 40 km/h < 45 km/h (trung bình cộng), vì xe mất nhiều thời gian hơn ở nửa quãng đường đi chậm."],
+["Vận dụng","Xác định độ dịch chuyển tổng hợp, quãng đường","Một ô tô đi thẳng 6 km theo hướng Tây, rẽ trái đi 4 km theo hướng Nam, rồi rẽ sang hướng Đông đi 3 km và dừng. Phát biểu nào sau đây về quãng đường đi được và độ dịch chuyển của ô tô là đúng?",["Quãng đường đi được bằng độ lớn độ dịch chuyển vì ô tô không quay lại điểm xuất phát.", "Độ lớn độ dịch chuyển bằng tổng độ dài các đoạn đường đã đi vì ô tô luôn chuyển động theo hướng xác định.", "Độ lớn độ dịch chuyển lớn hơn quãng đường đi được vì ô tô đã đổi hướng nhiều lần.", "Quãng đường là tổng độ dài các đoạn đã đi; độ dịch chuyển là vectơ nối vị trí đầu với vị trí cuối, được tổng hợp theo hướng của các đoạn nên có độ lớn nhỏ hơn quãng đường."],3,"s = 6 + 4 + 3 = 13 km. Tây 6 − Đông 3 = 3 km về hướng Tây; Nam 4 km → d = √(3² + 4²) = 5 km < 13 km."],
+["Vận dụng","Vận dụng công thức cộng vận tốc","Một ca nô chạy xuôi dòng từ A đến B hết 1,5 h và ngược dòng từ B về A hết 2 h. Biết AB = 30 km. Nhận định nào sau đây về vận tốc của ca nô so với bờ là đúng?",["Khi xuôi dòng, vận tốc của ca nô so với bờ bằng tổng; khi ngược dòng bằng hiệu của vận tốc ca nô so với nước và vận tốc dòng nước so với bờ, nên xuôi dòng mất ít thời gian hơn.", "Vận tốc của ca nô so với bờ luôn bằng vận tốc của ca nô so với nước nên thời gian xuôi dòng và ngược dòng như nhau.", "Khi xuôi dòng, vận tốc của ca nô so với bờ bằng hiệu hai vận tốc nên đi xuôi dòng mất nhiều thời gian hơn.", "Vận tốc của dòng nước so với bờ không ảnh hưởng đến thời gian đi vì quãng đường AB không đổi."],0,"v xuôi = 30/1,5 = 20 km/h; v ngược = 30/2 = 15 km/h. Xuôi dòng: v = v ca nô/nước + v nước/bờ; ngược dòng: v = hiệu của hai vận tốc đó. Suy ra v nước = (20 − 15)/2 = 2,5 km/h."],
+["Vận dụng","Nhận định chuyển động từ độ dốc đồ thị d – t","Dùng đồ thị d – t của một vật chuyển động thẳng như hình để trả lời câu 15 và câu 16. Nhận định nào sau đây về chuyển động của vật trong giai đoạn từ 6 s đến 10 s là đúng?",["Vật chuyển động thẳng đều theo chiều dương vì đồ thị là một đoạn thẳng.", "Vật đứng yên vì độ dịch chuyển của vật đạt giá trị lớn nhất ở đầu giai đoạn.", "Vật chuyển động thẳng đều ngược chiều dương vì đồ thị là đoạn thẳng có độ dốc âm.", "Vật chuyển động nhanh dần vì độ dịch chuyển giảm dần theo thời gian."],2,"Đoạn thẳng nên chuyển động thẳng đều; độ dốc = (−4 − 8)/(10 − 6) = −3 m/s < 0 nên vật chuyển động ngược chiều dương.",g1],
+["Vận dụng","Phân biệt tốc độ trung bình và vận tốc trung bình từ đồ thị d – t","Dựa vào đồ thị ở câu 15, nhận định nào sau đây về tốc độ trung bình và vận tốc trung bình của vật trong 10 s đầu là đúng?",["Hai đại lượng luôn bằng nhau vì cùng được tính trong khoảng thời gian 10 s.", "Tốc độ trung bình bằng quãng đường đi được chia cho thời gian, vận tốc trung bình bằng độ dịch chuyển chia cho thời gian; vì vật đổi chiều nên độ lớn vận tốc trung bình nhỏ hơn tốc độ trung bình.", "Vận tốc trung bình bằng quãng đường đi được chia cho thời gian nên luôn có giá trị dương.", "Tốc độ trung bình bằng độ dịch chuyển chia cho thời gian nên có thể nhận giá trị âm."],1,"s = 8 + 0 + 12 = 20 m → tốc độ trung bình = 2 m/s. d = −4 m → vận tốc trung bình = −0,4 m/s, độ lớn 0,4 m/s < 2 m/s vì vật đổi chiều.",g1]
+];
+
+const TF=[
+{t:"Nhóm học sinh dùng đồng hồ bấm giây (ĐCNN 0,01 s) đo thời gian xe đồ chơi chạy hết đoạn AB. Quan sát: 5 lần đo liên tiếp trong cùng điều kiện cho 2,54 s; 2,58 s; 2,56 s; 2,50 s; 2,57 s, các giá trị không trùng nhau. Dự đoán: sự chênh lệch này chủ yếu do thao tác bấm đồng hồ không đều. Kiểm tra: nhóm tăng lên 20 lần đo rồi lấy giá trị trung bình, đồng thời xem đồng hồ có về 0,00 s trước mỗi lần đo hay không.",
+s:[["Biết","Các lần đo không trùng nhau dù cùng điều kiện là biểu hiện của sai số ngẫu nhiên.",1,""],
+["Biết","Sai số hệ thống là sai lệch không có quy luật, lúc lệch phía này lúc lệch phía kia giữa các lần đo.",0,"Sai số hệ thống có quy luật, làm kết quả luôn lệch về một phía."],
+["Hiểu","Tăng số lần đo rồi lấy giá trị trung bình giúp giảm ảnh hưởng của sai số ngẫu nhiên.",1,""],
+["Hiểu","Nếu đồng hồ luôn chỉ lệch +0,05 s khi chưa bấm, chỉ cần tăng số lần đo thật nhiều thì giá trị trung bình sẽ về đúng giá trị thực.",0,"Lấy trung bình không loại được sai số hệ thống; phải hiệu chỉnh lại điểm 0 của đồng hồ."]]},
+{t:"Nhóm học sinh khảo sát xe lăn trên đường ray thẳng, chọn gốc tọa độ tại cảm biến, chiều dương là chiều xe rời xa cảm biến. Dự đoán: ở giai đoạn đầu xe chuyển động thẳng đều. Kiểm tra: từ số liệu cảm biến, nhóm vẽ đồ thị độ dịch chuyển – thời gian như hình rồi đọc từng giai đoạn.",g:g2,
+s:[["Hiểu","Trong 4 s đầu, đồ thị là đoạn thẳng dốc lên nên xe chuyển động thẳng đều với vận tốc 1,5 m/s theo chiều dương.",1,""],
+["Hiểu","Từ 4 s đến 6 s, đồ thị nằm ngang (độ dốc bằng 0) nên xe đang đứng yên.",1,""],
+["Vận dụng","Trong giai đoạn từ 6 s đến 8 s, vận tốc của xe là +2 m/s.",0,"Độ dốc = (2 − 6)/(8 − 6) = −2 m/s: xe chuyển động ngược chiều dương."],
+["Vận dụng","Trong 8 s đầu, vận tốc trung bình của xe có độ lớn 0,25 m/s còn tốc độ trung bình là 1,25 m/s.",1,"d = 2 m → 0,25 m/s; s = 6 + 4 = 10 m → 1,25 m/s."]]}
+];
+
+const SA=[
+["Biết","Tính vận tốc trung bình (một bước)","Một người đi xe đạp trên trục Ox: lúc 7 h ở tọa độ x₁ = 5 km, lúc 9 h ở tọa độ x₂ = 29 km. Vận tốc trung bình của người đó là bao nhiêu km/h?",12,"km/h","v = (29 − 5)/(9 − 7) = 12 km/h."],
+["Biết","Viết công thức vận tốc tổng hợp","Đoàn tàu chạy thẳng với vận tốc 8 m/s so với mặt đất. Một hành khách đi bộ dọc hành lang, cùng chiều tàu, với vận tốc 1,2 m/s so với tàu. Vận tốc của hành khách so với mặt đất là bao nhiêu m/s?",9.2,"m/s","v₁₃ = v₁₂ + v₂₃ = 1,2 + 8 = 9,2 m/s."],
+["Hiểu","Tính độ lớn vận tốc trung bình","Một vật chuyển động thẳng từ O đến A cách O 40 m hết 8 s, rồi quay về B cách O 10 m hết 12 s. Độ lớn vận tốc trung bình của vật trong cả quá trình là bao nhiêu m/s? (làm tròn đến hàng phần chục)",0.5,"m/s","d = 10 m, t = 20 s → v = 0,5 m/s."],
+["Hiểu","Tính tốc độ từ độ dốc của đồ thị d – t","Đồ thị d – t của một vật chuyển động thẳng đều như hình. Tốc độ của vật là bao nhiêu m/s?",3,"m/s","Độ dốc = (15 − 3)/(5 − 1) = 3 m/s.",g3]
+];
+
+const TL=[
+{h:"Bài 1. (1,5 điểm)",lv:"Biết",yc:"Vẽ đồ thị d – t từ số liệu; tính vận tốc, tốc độ trung bình, vận tốc trung bình",
+ctx:`<p class=qt>Một xe ô tô đồ chơi chạy trên đường thẳng, chọn chiều dương là chiều chuyển động ban đầu. Bảng số liệu độ dịch chuyển d theo thời gian t:</p><table class=tb><tr><th>t (s)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><th>d (m)</th><td>0</td><td>4</td><td>8</td><td>8</td><td>4</td><td>0</td></tr></table>`,
+p:[["a) (0,5 đ) Vẽ đồ thị độ dịch chuyển – thời gian của xe.",()=>`Nối các điểm (0; 0), (2; 4), (4; 8), (6; 8), (8; 4), (10; 0): đoạn đầu dốc lên, đoạn từ 4 s đến 6 s nằm ngang, đoạn cuối dốc xuống.${g4()}`],
+["b) (0,5 đ) Tính vận tốc của xe trong từng giai đoạn chuyển động.",()=>"0–4 s: v = (8 − 0)/4 = 2 m/s (theo chiều dương). 4–6 s: v = 0 (đứng yên). 6–10 s: v = (0 − 8)/4 = −2 m/s (ngược chiều dương)."],
+["c) (0,5 đ) Tính tốc độ trung bình và vận tốc trung bình của xe trong 10 s.",()=>"s = 8 + 8 = 16 m → tốc độ trung bình = 16/10 = 1,6 m/s. d = 0 − 0 = 0 → vận tốc trung bình = 0."]]},
+{h:"Bài 2. (1,5 điểm)",lv:"Vận dụng",yc:"Xác định độ dịch chuyển tổng hợp, vận tốc tổng hợp",
+ctx:`<p class=qt>Một ca nô qua con sông rộng 120 m, mũi ca nô luôn hướng vuông góc với bờ. Vận tốc của ca nô so với nước là 4 m/s, nước chảy so với bờ với vận tốc 3 m/s.</p>`,
+p:[["a) (0,5 đ) Tính thời gian ca nô sang tới bờ bên kia.",()=>"t = 120/4 = 30 s."],
+["b) (0,5 đ) Tính quãng đường ca nô bị nước trôi dọc theo bờ.",()=>"Quãng trôi = 3 × 30 = 90 m."],
+["c) (0,5 đ) Tính độ lớn vận tốc của ca nô so với bờ và độ lớn độ dịch chuyển của ca nô so với điểm xuất phát.",()=>"v₁₃ = √(4² + 3²) = 5 m/s (0,25 đ). d = √(120² + 90²) = 150 m, hoặc 5 × 30 = 150 m (0,25 đ)."]]}
+];
+const L="ABCD";
+const ST={mc:[],tf:TF.map(()=>[]),sa:[],dr:[],tl:{},rv:{}};
+const pages=[{k:"start"}];
+MC.forEach((_,i)=>pages.push({k:"mc",i}));TF.forEach((_,i)=>pages.push({k:"tf",i}));SA.forEach((_,i)=>pages.push({k:"sa",i}));TL.forEach((_,i)=>pages.push({k:"tl",i}));pages.push({k:"end"});
+const PN={start:"Mở đầu",mc:"Phần I",tf:"Phần II",sa:"Phần III",tl:"Tự luận",end:"Kết quả"};
+const CNT={mc:MC.length,tf:TF.length,sa:SA.length,tl:TL.length};
+let cur=0;
+
+function status(p){
+if(p.k==="mc"){const a=ST.mc[p.i];return a===undefined?"":a===MC[p.i][4]?"ok":"no"}
+if(p.k==="tf"){const A=ST.tf[p.i],q=TF[p.i];let n=0,w=0;q.s.forEach((s,k)=>{if(A[k]!==undefined){n++;if(A[k]!=s[2])w++}});return !n?"":w?"no":n<q.s.length?"part":"ok"}
+if(p.k==="sa"){const r=ST.sa[p.i];return r?(r.ok?"ok":"no"):""}
+if(p.k==="tl")return ST.rv[p.i]?"part":"";
+return ""}
+function label(p){return p.k==="start"||p.k==="end"?PN[p.k]:`${PN[p.k]} · Câu ${p.i+1}/${CNT[p.k]}`}
+function ph(p,extra){const q=p.k==="mc"?MC[p.i]:p.k==="sa"?SA[p.i]:null;
+return `<div class=ph><span class=pt>${PN[p.k]}</span><span>Câu ${p.i+1}/${CNT[p.k]}</span>${q?`<span class=lv>${q[0]}</span>`:""}${extra?`<span>${extra}</span>`:""}</div>`}
+
+function pageHtml(p){
+if(p.k==="start")return `<div class="pg cv"><div class=hd><div><b>SỞ GIÁO DỤC VÀ ĐÀO TẠO ĐỒNG THÁP</b><b>TRƯỜNG THPT PHẠM THÀNH TRUNG</b><small>ĐỀ ÔN TẬP</small></div><div><b>ĐỀ KIỂM TRA GIỮA HỌC KỲ I</b><b>NĂM HỌC: 2026 – 2027</b><b>MÔN: VẬT LÝ 10</b><small>Thời gian làm bài: 45 phút</small></div></div>
+<h1>ĐỀ 1 ÔN TẬP GIỮA HỌC KỲ I – VẬT LÝ 10</h1><p style="text-align:center;margin:0;color:var(--mut)">Nội dung: Bài 1 đến Bài 7 (đến đồ thị độ dịch chuyển – thời gian)</p>
+<ul><li>Phần I: 16 câu nhiều lựa chọn (0,25 đ/câu).</li><li>Phần II: 2 câu đúng – sai, mỗi câu 4 ý (0,25 đ/ý).</li><li>Phần III: 4 câu trả lời ngắn (0,25 đ/câu).</li><li>Tự luận: 2 bài (3 điểm), tự đối chiếu đáp án.</li></ul>
+<p>Mỗi trang một câu. Chọn đáp án là biết ngay: <b style="color:var(--ok)">xanh</b> là đúng, <b style="color:var(--no)">đỏ</b> là sai. Dùng nút Trước/Sau hoặc phím ← → để chuyển câu.</p><button class="btn big" data-go=1>Bắt đầu làm bài ▶</button></div>`;
+if(p.k==="mc"){const q=MC[p.i],a=ST.mc[p.i],d=a!==undefined,ok=a===q[4];
+return `<div class=pg>${ph(p)}<div class="cols${q[6]?" hasg":""}"><div><p class=qt>${q[2]}</p>${q[3].map((o,j)=>`<button class="o ${d?(j===q[4]?"ok":j===a?"no":""):""}" data-mc=${j} ${d?"disabled":""}><b>${L[j]}</b><span>${o}</span><i class=mk>${d&&j===q[4]?"✓":d&&j===a?"✗":""}</i></button>`).join("")}${d?`<div class="fb ${ok?"":"no"}" id=fb><b>${ok?"✓ Chính xác!":"✗ Chưa đúng. Đáp án đúng: "+L[q[4]]+"."}</b>${q[5]?`<p>${q[5]}</p>`:""}<small>Yêu cầu cần đạt: ${q[1]}</small></div>`:""}</div>${q[6]?`<div class=side>${q[6]()}</div>`:""}</div></div>`}
+if(p.k==="tf"){const q=TF[p.i],A=ST.tf[p.i];
+return `<div class=pg>${ph(p,"Chọn Đúng hoặc Sai cho từng ý")}<div class="cols${q.g?" hasg":""}"><div><p class=qt>${q.t}</p>${q.s.map((s,k)=>{const v=A[k],d=v!==undefined,ok=d&&v==s[2];
+return `<div class="st ${d?(ok?"ok":"no"):""}"><div><b>${"abcd"[k]})</b> <span class=lv>${s[0]}</span> ${s[1]}</div><div class=stb><button data-tf="${k}:1" class="${d&&v==1?(ok?"ok":"no"):""}" ${d?"disabled":""}>Đúng</button><button data-tf="${k}:0" class="${d&&v==0?(ok?"ok":"no"):""}" ${d?"disabled":""}>Sai</button></div>${d?`<div class=ex>${ok?"✓ Chính xác.":"✗ Chưa đúng."} Đáp án: <b class=v>${s[2]?"Đúng":"Sai"}</b>${s[3]?". "+s[3]:""}</div>`:""}</div>`}).join("")}</div>${q.g?`<div class=side>${q.g()}</div>`:""}</div></div>`}
+if(p.k==="sa"){const q=SA[p.i],r=ST.sa[p.i],d=!!r;
+return `<div class=pg>${ph(p,"Nhập số rồi bấm Kiểm tra (dấu phẩy hoặc dấu chấm đều được)")}<div class="cols${q[6]?" hasg":""}"><div><p class=qt>${q[2]}</p><div class=sar><input id=sain class="sa ${d?(r.ok?"ok":"no"):""}" inputmode=decimal autocomplete=off aria-label="Đáp án" value="${d?r.v:(ST.dr[p.i]||"")}" ${d?"disabled":""}><span>${q[4]}</span>${d?"":`<button class=btn id=chk>Kiểm tra</button>`}</div>${d?`<div class="fb ${r.ok?"":"no"}" id=fb><b>${r.ok?"✓ Chính xác!":"✗ Chưa đúng."} Đáp án: ${String(q[3]).replace(".",",")} ${q[4]}</b><p>${q[5]}</p><small>Yêu cầu cần đạt: ${q[1]}</small></div>`:""}</div>${q[6]?`<div class=side>${q[6]()}</div>`:""}</div></div>`}
+if(p.k==="tl"){const q=TL[p.i],sh=ST.rv[p.i];
+return `<div class=pg>${ph(p,q.lv)}<p class=qt><b>${q.h}</b> <span class=lv>${q.lv}</span></p>${q.ctx}${q.p.map((x,k)=>`<p class=sub>${x[0]}</p><textarea data-tl="${p.i}_${k}" aria-label="Bài làm ${k+1}" placeholder="Trình bày bài làm (tùy chọn)">${ST.tl[p.i+"_"+k]||""}</textarea>${sh?`<div class=tlx>${x[1]()}</div>`:""}`).join("")}<button class="btn ${sh?"sec":""}" data-rv=${p.i}>${sh?"Ẩn đáp án":"Xem đáp án"}</button></div>`}
+const a=pages.filter(x=>x.k==="mc"&&status(x)==="ok").length*.25;
+let b=0;TF.forEach((q,i)=>q.s.forEach((s,k)=>{if(ST.tf[i][k]!==undefined&&ST.tf[i][k]==s[2])b+=.25}));
+const c=pages.filter(x=>x.k==="sa"&&status(x)==="ok").length*.25;
+const un=pages.filter(x=>["mc","sa"].includes(x.k)&&!status(x)).length+TF.reduce((n,q,i)=>n+q.s.filter((s,k)=>ST.tf[i][k]===undefined).length,0);
+const bad=pages.map((x,i)=>[x,i]).filter(([x])=>status(x)==="no");
+return `<div class="pg cv"><h1>KẾT QUẢ PHẦN TRẮC NGHIỆM</h1><div class=sc><div>Tổng<b>${f(a+b+c)}/7,00</b></div><div>Phần I<b>${f(a)}/4,00</b></div><div>Phần II<b>${f(b)}/2,00</b></div><div>Phần III<b>${f(c)}/1,00</b></div></div>
+<p>${un?`Còn <b>${un}</b> ý/câu chưa làm (mở ☰ Câu hỏi để quay lại). `:""}Phần tự luận (3,0 điểm): đối chiếu bài làm với đáp án ở từng ý.</p>
+${bad.length?`<p>Các câu cần xem lại:</p><div class=rv>${bad.map(([x,i])=>`<button data-go=${i}>${PN[x.k]} · ${x.i+1}</button>`).join("")}</div>`:""}
+<button class="btn big" id=rs>Làm lại từ đầu</button></div>`}
+
+function draw(keep){const y=scrollY,p=pages[cur];
+$("#app").innerHTML=pageHtml(p);
+$("#tt").innerHTML=`Đề 1 ôn tập giữa HK I · Vật lí 10 <span>— ${label(p)}</span>`;
+$("#bl").textContent=label(p);
+$("#pg").style.width=(cur/(pages.length-1)*100)+"%";
+$("#pv").disabled=cur===0;$("#nx").disabled=cur===pages.length-1;
+$("#nx").textContent=cur===pages.length-2?"Kết quả ▶":"Sau ▶";
+if(keep){scrollTo(0,y);const e=$("#fb");if(e)e.scrollIntoView({block:"nearest",behavior:"smooth"})}else scrollTo(0,0)}
+function go(n){if(n<0||n>=pages.length)return;cur=n;$("#ov").classList.remove("on");draw()}
+function pick(i,j){if(ST.mc[i]!==undefined)return;ST.mc[i]=j;draw(1)}
+function chk(){const p=pages[cur];if(p.k!=="sa"||ST.sa[p.i])return;const e=$("#sain"),v=parseFloat(e.value.replace(",","."));
+if(e.value.trim()===""||isNaN(v)){e.focus();return}
+ST.sa[p.i]={v:e.value,ok:Math.abs(v-SA[p.i][3])<.005};draw(1)}
+function panel(){let h=`<div style="display:flex;justify-content:space-between;align-items:center"><b>Danh sách câu hỏi</b><button class=ib id=cl>Đóng ✕</button></div>`;
+[["mc","Phần I"],["tf","Phần II"],["sa","Phần III"],["tl","Tự luận"]].forEach(([k,n])=>{h+=`<h3>${n}</h3><div class=cells>`+pages.map((x,i)=>[x,i]).filter(([x])=>x.k===k).map(([x,i])=>`<button class="${status(x)} ${i===cur?"cur":""}" data-go=${i}>${x.i+1}</button>`).join("")+`</div>`});
+h+=`<h3>Khác</h3><div class=cells><button data-go=0 style="width:auto;padding:0 14px">Mở đầu</button><button data-go=${pages.length-1} style="width:auto;padding:0 14px">Kết quả</button></div><p style="color:var(--mut);font-size:16px">Xanh: đúng · Đỏ: có ý sai · Viền nét đứt: làm dở / đã xem đáp án.</p>`;
+$("#pn").innerHTML=h;$("#ov").classList.add("on")}
+
+document.addEventListener("click",e=>{const t=e.target.closest("button,[data-go]");if(!t)return;
+if(t.dataset.mc!==undefined)pick(pages[cur].i,+t.dataset.mc);
+else if(t.dataset.tf){const[k,v]=t.dataset.tf.split(":"),A=ST.tf[pages[cur].i];if(A[k]===undefined){A[k]=+v;draw(1)}}
+else if(t.dataset.rv!==undefined){ST.rv[t.dataset.rv]=!ST.rv[t.dataset.rv];draw(1)}
+else if(t.dataset.go!==undefined)go(+t.dataset.go);
+else if(t.id==="chk")chk();
+else if(t.id==="pv")go(cur-1);else if(t.id==="nx")go(cur+1);
+else if(t.id==="menu")panel();else if(t.id==="cl")$("#ov").classList.remove("on");
+else if(t.id==="rs"){ST.mc=[];ST.tf=TF.map(()=>[]);ST.sa=[];ST.dr=[];ST.tl={};ST.rv={};go(0)}
+else if(t.id==="th"){const r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark";t.textContent=d?"🌙":"☀️"}});
+$("#ov").addEventListener("click",e=>{if(e.target.id==="ov")$("#ov").classList.remove("on")});
+document.addEventListener("input",e=>{const t=e.target;if(t.id==="sain")ST.dr[pages[cur].i]=t.value;else if(t.dataset&&t.dataset.tl)ST.tl[t.dataset.tl]=t.value});
+document.addEventListener("keydown",e=>{const t=e.target.tagName;
+if(t==="INPUT"||t==="TEXTAREA"){if(e.key==="Enter"&&e.target.id==="sain")chk();return}
+if(e.key==="Escape")$("#ov").classList.remove("on");
+else if(e.key==="ArrowRight")go(cur+1);else if(e.key==="ArrowLeft")go(cur-1);
+else{const p=pages[cur];if(p.k==="mc"){const j="abcd1234".indexOf(e.key.toLowerCase());if(j>-1)pick(p.i,j%4)}}});
+draw();
+</script>
+</body>
+</html>

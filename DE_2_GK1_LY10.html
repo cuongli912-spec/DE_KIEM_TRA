@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đề Ôn Tập Giữa HK1 Vật Lí 10 - Đề 02 | Thầy Trần Việt Cường</title>
+<style>
+:root{--p:#1e40af;--ok:#15803d;--okb:#dcfce7;--no:#b91c1c;--nob:#fee2e2;--bd:#cbd5e1}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f1f5f9;color:#1e293b;display:flex;flex-direction:column;font-size:16px}
+.top,.bot{flex:none;background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;display:flex;align-items:center;gap:8px;padding:6px 12px;flex-wrap:wrap}
+.top small{opacity:.9}.sp{flex:1}
+.top button,.bot button{font:700 15px inherit;font-family:inherit;padding:6px 12px;border:1px solid rgba(255,255,255,.5);border-radius:8px;background:rgba(255,255,255,.15);color:#fff;cursor:pointer}
+.top button.gr{background:#16a34a;border-color:#16a34a}.top button:disabled{background:#94a3b8;cursor:not-allowed}
+.tmr{background:rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;font-weight:700}
+.fc{display:flex;gap:4px;align-items:center}
+.bot .nv{font-size:18px;padding:8px 22px}.pr{flex:1;text-align:center;font-weight:700}
+.pb{height:8px;background:rgba(255,255,255,.3);border-radius:9px;margin-top:4px;overflow:hidden}.pb i{display:block;height:100%;width:0;background:#fbbf24;transition:width .2s}
+#stage{flex:1;overflow:auto;padding:10px 16px}
+#page{font-size:var(--fs,28px);max-width:1100px;margin:0 auto}
+.hd{font-size:.6em;display:flex;justify-content:space-between;align-items:center;color:#475569;font-weight:600}
+.hd b{background:#eff6ff;color:var(--p);padding:.1em .6em;border-radius:.4em}
+.q{margin:.35em 0;line-height:1.4;font-weight:500}
+.opt{display:block;width:100%;text-align:left;font:inherit;line-height:1.35;padding:.3em .7em;margin:.3em 0;border:3px solid var(--bd);border-radius:.5em;background:#fff;color:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:#3b82f6;background:#eff6ff}.opt:disabled{cursor:default}
+.opt.ok{background:var(--okb);border-color:var(--ok);color:#14532d;font-weight:700}.opt.ok::after{content:' ✓'}
+.opt.no{background:var(--nob);border-color:var(--no);color:#7f1d1d}.opt.no::after{content:' ✗';font-weight:700}
+.tfb{display:flex;gap:.6em}.tfb .opt{text-align:center;flex:1}
+.inp{font:inherit;font-weight:600;padding:.1em .5em;border:3px solid #94a3b8;border-radius:.4em;width:6em;background:#fff;color:inherit}
+select.inp{width:100%}.inp:disabled{color:inherit;opacity:1}
+.inp.ok{background:var(--okb);border-color:var(--ok);color:#14532d}.inp.no{background:var(--nob);border-color:var(--no);color:#7f1d1d}
+.w{width:100%}
+.btn{font:inherit;font-size:.8em;font-weight:700;padding:.25em 1em;border:0;border-radius:999px;background:var(--p);color:#fff;cursor:pointer;margin:.3em 0}
+.exp{margin-top:.4em;padding:.4em .8em;background:#fffbeb;border-left:6px solid #f59e0b;border-radius:.4em;color:#78350f;line-height:1.4}
+details{margin:.3em 0;background:#fff;border:1px solid var(--bd);border-radius:.4em;padding:.2em .6em}
+summary{cursor:pointer;font-size:.6em;font-weight:700;color:var(--p)}
+table{border-collapse:collapse;margin:.3em 0}th,td{border:2px solid var(--bd);padding:.05em .5em;text-align:center}
+.svg-container{text-align:center;margin:.3em auto}
+.svg-container svg{max-height:34vh;width:auto;max-width:100%;background:#fff;border:1px solid var(--bd);border-radius:.3em}
+.svg-container svg text{font-size:14px}
+.big{font-size:1.6em;font-weight:800;color:var(--p)}
+.sy{padding:.3em .6em;border-radius:.4em;font-weight:600;font-size:.7em}.sy.wt{background:#fef3c7;color:#92400e}.sy.ok{background:var(--okb);color:var(--ok)}.sy.no{background:var(--nob);color:var(--no)}
+#mapw{display:none;position:fixed;inset:0;background:rgba(15,23,42,.85);z-index:9;padding:16px;flex-direction:column;align-items:center;overflow:auto;color:#fff}
+#mapw.on{display:flex}
+#map{display:grid;grid-template-columns:repeat(auto-fill,minmax(70px,1fr));gap:8px;width:min(900px,100%);margin:10px 0}
+.mp{font:700 16px 'Segoe UI',Arial;padding:12px 0;border:2px solid #fff;border-radius:8px;background:#fff;color:#1e293b;cursor:pointer}
+.mp.ok{background:#16a34a;color:#fff;border-color:#16a34a}.mp.no{background:#dc2626;color:#fff;border-color:#dc2626}.mp.cu{outline:4px solid #fbbf24}
+</style>
+</head>
+<body>
+<div class="top">
+<div><b>TRƯỜNG THPT PHẠM THÀNH TRUNG</b><br><small>Vật Lí 10 · Ôn tập giữa HK1 · Đề 02 | GV: Thầy Trần Việt Cường</small></div>
+<div class="sp"></div>
+<span class="fc"><button data-a="fs" data-x="-" title="Giảm cỡ chữ">A−</button><b id="fsl">Tự động</b><button data-a="fs" data-x="+" title="Tăng cỡ chữ">A+</button><button data-a="fs" data-x="a">Tự động</button></span>
+<button data-a="mp">☰ Danh sách câu</button>
+<span class="tmr">⏱ <b id="tm">45:00</b></span>
+<button id="sub" class="gr" data-a="sub">NỘP BÀI</button>
+</div>
+<div id="stage"><div id="page"></div></div>
+<div class="bot"><button class="nv" data-a="pv">◀ Trước</button><div class="pr"><span id="lb"></span><div class="pb"><i id="bar"></i></div></div><button class="nv" data-a="nx">Sau ▶</button></div>
+<div id="mapw"><div>🟩 đúng &nbsp; 🟥 sai &nbsp; ⬜ chưa làm</div><div id="map"></div><button class="btn" data-a="mp">Đóng</button></div>
+
+<script>
+// Google Apps Script Endpoint lưu điểm tự động vào Google Drive
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxFVLV_2HxuCK0MivT-7vJqGnl_dr5u4VPnWbP2uQUBwETBL-LQpVHI9QyHzWcBG-dkvg/exec";
+
+// SVG đồ thị cho Câu 15-16 Phần I
+const svgPart1Cau15 = `
+<div class="svg-container">
+<svg viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
+    <rect width="440" height="250" fill="#ffffff"/>
+    <g stroke="#cbd5e1" stroke-width="1">
+        <line x1="55" y1="30" x2="405" y2="30"/>
+        <line x1="55" y1="72" x2="405" y2="72"/>
+        <line x1="55" y1="115" x2="405" y2="115"/>
+        <line x1="55" y1="157" x2="405" y2="157"/>
+        <line x1="113" y1="30" x2="113" y2="200"/>
+        <line x1="172" y1="30" x2="172" y2="200"/>
+        <line x1="230" y1="30" x2="230" y2="200"/>
+        <line x1="288" y1="30" x2="288" y2="200"/>
+        <line x1="347" y1="30" x2="347" y2="200"/>
+        <line x1="405" y1="30" x2="405" y2="200"/>
+    </g>
+    <line x1="55" y1="200" x2="418" y2="200" stroke="#0f172a" stroke-width="2"/>
+    <line x1="55" y1="200" x2="55" y2="15" stroke="#0f172a" stroke-width="2"/>
+    <!-- Xe 1: (0,0) -> (2,12) -> (4,24) -->
+    <polyline points="55,200 172,115 288,30" fill="none" stroke="#1e40af" stroke-width="3.2"/>
+    <circle cx="55" cy="200" r="4.5" fill="#1e40af"/>
+    <circle cx="172" cy="115" r="4.5" fill="#1e40af"/>
+    <circle cx="288" cy="30" r="4.5" fill="#1e40af"/>
+    <!-- Xe 2: (0,12) -> (6,12) -->
+    <line x1="55" y1="115" x2="405" y2="115" stroke="#dc2626" stroke-width="3" stroke-dasharray="7,5"/>
+    <rect x="51" y="111" width="8" height="8" fill="#dc2626"/>
+    <rect x="168" y="111" width="8" height="8" fill="#dc2626"/>
+    <rect x="284" y="111" width="8" height="8" fill="#dc2626"/>
+    <rect x="401" y="111" width="8" height="8" fill="#dc2626"/>
+    <!-- Legend -->
+    <rect x="65" y="38" width="105" height="46" rx="5" fill="#ffffff" stroke="#94a3b8"/>
+    <line x1="72" y1="52" x2="100" y2="52" stroke="#1e40af" stroke-width="3"/>
+    <circle cx="86" cy="52" r="3.5" fill="#1e40af"/>
+    <text x="108" y="56" font-size="12" font-weight="bold" fill="#1e40af">Xe (1)</text>
+    <line x1="72" y1="71" x2="100" y2="71" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <rect x="83" y="68" width="6" height="6" fill="#dc2626"/>
+    <text x="108" y="75" font-size="12" font-weight="bold" fill="#dc2626">Xe (2)</text>
+    <!-- Labels -->
+    <text x="20" y="20" font-size="13" font-weight="bold">d (m)</text>
+    <text x="395" y="232" font-size="13" font-weight="bold">t (s)</text>
+    <text x="36" y="204" font-size="12">0</text>
+    <text x="36" y="161" font-size="12">6</text>
+    <text x="29" y="119" font-size="12">12</text>
+    <text x="29" y="76" font-size="12">18</text>
+    <text x="29" y="34" font-size="12">24</text>
+    <text x="51" y="218" font-size="12">0</text>
+    <text x="109" y="218" font-size="12">1</text>
+    <text x="168" y="218" font-size="12">2</text>
+    <text x="226" y="218" font-size="12">3</text>
+    <text x="284" y="218" font-size="12">4</text>
+    <text x="343" y="218" font-size="12">5</text>
+    <text x="401" y="218" font-size="12">6</text>
+</svg>
+</div>`;
+
+// SVG đồ thị cho Câu 2 Phần II
+const svgPart2Cau2 = `
+<div class="svg-container">
+<svg viewBox="0 0 450 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="450" height="240" fill="#ffffff"/>
+    <g stroke="#cbd5e1" stroke-width="1">
+        <line x1="50" y1="30" x2="410" y2="30"/>
+        <line x1="50" y1="70" x2="410" y2="70"/>
+        <line x1="50" y1="110" x2="410" y2="110"/>
+        <line x1="50" y1="150" x2="410" y2="150"/>
+        <line x1="90" y1="30" x2="90" y2="190"/>
+        <line x1="130" y1="30" x2="130" y2="190"/>
+        <line x1="170" y1="30" x2="170" y2="190"/>
+        <line x1="210" y1="30" x2="210" y2="190"/>
+        <line x1="250" y1="30" x2="250" y2="190"/>
+        <line x1="290" y1="30" x2="290" y2="190"/>
+        <line x1="330" y1="30" x2="330" y2="190"/>
+        <line x1="370" y1="30" x2="370" y2="190"/>
+        <line x1="410" y1="30" x2="410" y2="190"/>
+    </g>
+    <line x1="50" y1="190" x2="425" y2="190" stroke="#0f172a" stroke-width="2"/>
+    <line x1="50" y1="190" x2="50" y2="15" stroke="#0f172a" stroke-width="2"/>
+    <!-- (0,0) -> (3,12) -> (5,12) -> (7,6) -> (9,0) -->
+    <polyline points="50,190 170,30 250,30 330,110 410,190" fill="none" stroke="#1e40af" stroke-width="3.2"/>
+    <circle cx="50" cy="190" r="4.5" fill="#1e40af"/>
+    <circle cx="170" cy="30" r="4.5" fill="#1e40af"/>
+    <circle cx="250" cy="30" r="4.5" fill="#1e40af"/>
+    <circle cx="330" cy="110" r="4.5" fill="#1e40af"/>
+    <circle cx="410" cy="190" r="4.5" fill="#1e40af"/>
+    <text x="18" y="20" font-size="13" font-weight="bold">d (m)</text>
+    <text x="405" y="225" font-size="13" font-weight="bold">t (s)</text>
+    <text x="32" y="194" font-size="12">0</text>
+    <text x="32" y="154" font-size="12">3</text>
+    <text x="32" y="114" font-size="12">6</text>
+    <text x="32" y="74" font-size="12">9</text>
+    <text x="25" y="34" font-size="12">12</text>
+    <text x="46" y="208" font-size="12">0</text>
+    <text x="86" y="208" font-size="12">1</text>
+    <text x="126" y="208" font-size="12">2</text>
+    <text x="166" y="208" font-size="12">3</text>
+    <text x="206" y="208" font-size="12">4</text>
+    <text x="246" y="208" font-size="12">5</text>
+    <text x="286" y="208" font-size="12">6</text>
+    <text x="326" y="208" font-size="12">7</text>
+    <text x="366" y="208" font-size="12">8</text>
+    <text x="406" y="208" font-size="12">9</text>
+</svg>
+</div>`;
+
+// SVG đồ thị cho Câu 4 Phần III
+const svgPart3Cau4 = `
+<div class="svg-container">
+<svg viewBox="0 0 420 235" xmlns="http://www.w3.org/2000/svg">
+    <rect width="420" height="235" fill="#ffffff"/>
+    <g stroke="#cbd5e1" stroke-width="1">
+        <line x1="55" y1="30" x2="375" y2="30"/>
+        <line x1="55" y1="70" x2="375" y2="70"/>
+        <line x1="55" y1="110" x2="375" y2="110"/>
+        <line x1="55" y1="150" x2="375" y2="150"/>
+        <line x1="135" y1="30" x2="135" y2="190"/>
+        <line x1="215" y1="30" x2="215" y2="190"/>
+        <line x1="295" y1="30" x2="295" y2="190"/>
+        <line x1="375" y1="30" x2="375" y2="190"/>
+    </g>
+    <line x1="55" y1="190" x2="395" y2="190" stroke="#0f172a" stroke-width="2"/>
+    <line x1="55" y1="190" x2="55" y2="15" stroke="#0f172a" stroke-width="2"/>
+    <polyline points="55,190 135,150 215,110 295,70 375,30" fill="none" stroke="#1e40af" stroke-width="3.2"/>
+    <circle cx="55" cy="190" r="4.5" fill="#1e40af"/>
+    <circle cx="135" cy="150" r="4.5" fill="#1e40af"/>
+    <circle cx="215" cy="110" r="4.5" fill="#1e40af"/>
+    <circle cx="295" cy="70" r="4.5" fill="#1e40af"/>
+    <circle cx="375" cy="30" r="4.5" fill="#1e40af"/>
+    <text x="20" y="20" font-size="13" font-weight="bold">d (m)</text>
+    <text x="370" y="224" font-size="13" font-weight="bold">t (s)</text>
+    <text x="36" y="194" font-size="12">0</text>
+    <text x="36" y="154" font-size="12">5</text>
+    <text x="29" y="114" font-size="12">10</text>
+    <text x="29" y="74" font-size="12">15</text>
+    <text x="29" y="34" font-size="12">20</text>
+    <text x="51" y="208" font-size="12">0</text>
+    <text x="131" y="208" font-size="12">2</text>
+    <text x="211" y="208" font-size="12">4</text>
+    <text x="291" y="208" font-size="12">6</text>
+    <text x="371" y="208" font-size="12">8</text>
+</svg>
+</div>`;
+
+const mcqData = [
+    {
+        q: "Mục tiêu học tập môn Vật lí ở trường phổ thông là giúp học sinh",
+        opts: [
+            "A. chỉ học thuộc lòng các công thức toán học mà không cần làm thí nghiệm thực hành.",
+            "B. khám phá các quy luật vận động của tự nhiên, hình thành và phát triển năng lực vật lí.",
+            "C. nghiên cứu chuyên sâu về quá trình tiến hóa và di truyền của các loài sinh vật.",
+            "D. chế tạo ra các hợp chất hóa học mới phục vụ cho ngành công nghiệp luyện kim."
+        ],
+        ans: 1,
+        exp: "Mục tiêu của môn Vật lí là giúp học sinh khám phá các quy luật vận động của vật chất, năng lượng và hình thành, phát triển năng lực vật lí."
+    },
+    {
+        q: "Nhà bác học Galilei thả hai quả cầu bằng chì có trọng lượng khác nhau từ đỉnh tháp nghiêng Pisa xuống đất để kiểm tra dự đoán về sự rơi nhanh hay chậm của các vật. Ông đã sử dụng phương pháp nghiên cứu nào của Vật lí?",
+        opts: [
+            "A. Phương pháp thực nghiệm.",
+            "B. Phương pháp mô hình toán học.",
+            "C. Phương pháp suy diễn lí thuyết thuần túy.",
+            "D. Phương pháp điều tra thống kê xã hội."
+        ],
+        ans: 0,
+        exp: "Tiến hành thí nghiệm thả hai quả cầu từ tháp nghiêng Pisa để kiểm tra giả thuyết là điển hình của phương pháp thực nghiệm."
+    },
+    {
+        q: "Trong phòng thí nghiệm Vật lí, biển báo an toàn có hình tam giác nền vàng, viền đen và biểu tượng cánh quạt ba cánh màu đen ở giữa mang ý nghĩa gì?",
+        opts: [
+            "A. Nơi có từ trường mạnh.",
+            "B. Cảnh báo chất dễ cháy nổ.",
+            "C. Cảnh báo khu vực có chất phóng xạ.",
+            "D. Nơi được phép ăn uống và nghỉ ngơi."
+        ],
+        ans: 2,
+        exp: "Biển hình tam giác vàng có biểu tượng cánh quạt 3 cánh màu đen là biển cảnh báo khu vực có chất phóng xạ."
+    },
+    {
+        q: "Trong hệ đơn vị đo lường quốc tế (SI), đơn vị nào sau đây là đơn vị cơ bản?",
+        opts: [
+            "A. Jun (J).",
+            "B. Vôn (V).",
+            "C. Ampe (A).",
+            "D. Oát (W)."
+        ],
+        ans: 2,
+        exp: "7 đơn vị cơ bản trong hệ SI gồm: m, kg, s, A (Ampe), K, mol, cd."
+    },
+    {
+        q: "Đại lượng được xác định bằng thương số giữa độ dịch chuyển của vật và khoảng thời gian thực hiện độ dịch chuyển đó được gọi là",
+        opts: [
+            "A. tốc độ trung bình.",
+            "B. tốc độ tức thời.",
+            "C. vận tốc trung bình.",
+            "D. quãng đường trung bình."
+        ],
+        ans: 2,
+        exp: "Vận tốc trung bình được xác định bằng thương số giữa độ dịch chuyển và thời gian: v⃗ = d⃗ / Δt."
+    },
+    {
+        q: "Đồng hồ công tơ mét (tốc kế) lắp trước mặt người lái xe mô tô, ô tô dùng để chỉ giá trị của đại lượng nào sau đây?",
+        opts: [
+            "A. Tốc độ trung bình của xe trên cả hành trình dài.",
+            "B. Tốc độ tức thời của xe tại thời điểm người lái đang quan sát.",
+            "C. Độ dịch chuyển tổng hợp của xe từ lúc xuất phát.",
+            "D. Thời gian xe đã di chuyển kể từ khi nổ máy."
+        ],
+        ans: 1,
+        exp: "Tốc kế trên xe máy, ô tô hiển thị tốc độ tức thời của xe tại thời điểm đang xét."
+    },
+    {
+        q: "Việc ứng dụng các thành tựu của Vật lí lượng tử, vật lí bán dẫn, công nghệ nano và trí tuệ nhân tạo để tự động hóa dây chuyền sản xuất thông minh là đặc trưng của cuộc cách mạng công nghiệp nào?",
+        opts: [
+            "A. Cuộc cách mạng công nghiệp lần thứ nhất (thế kỉ XVIII).",
+            "B. Cuộc cách mạng công nghiệp lần thứ hai (cuối thế kỉ XIX).",
+            "C. Cuộc cách mạng công nghiệp lần thứ ba (những năm 1970).",
+            "D. Cuộc cách mạng công nghiệp lần thứ tư (đầu thế kỉ XXI)."
+        ],
+        ans: 3,
+        exp: "Công nghệ nano, AI, IoT và hệ thống sản xuất thông minh là đặc trưng của Cách mạng công nghiệp lần thứ tư (4.0)."
+    },
+    {
+        q: "Vì sao khi làm thí nghiệm với nguồn điện hoặc biến áp nguồn trong phòng thực hành, học sinh phải bố trí mạch điện theo sơ đồ và chỉ đóng công tắc nguồn khi đã được giáo viên kiểm tra?",
+        opts: [
+            "A. Để đồng hồ đo thời gian chạy nhanh hơn bình thường.",
+            "B. Để phòng tránh nguy cơ mắc sai mạch gây đoản mạch (chập cháy), hỏng thiết bị và mất an toàn điện.",
+            "C. Để làm tăng điện trở của các dây nối trong bộ thí nghiệm.",
+            "D. Để loại bỏ hoàn toàn sai số ngẫu nhiên trong quá trình đọc số liệu."
+        ],
+        ans: 1,
+        exp: "Kiểm tra mạch trước khi cấp nguồn giúp tránh đoản mạch, bảo vệ thiết bị và đảm bảo an toàn điện cho học sinh."
+    },
+    {
+        q: "Một học sinh dùng thước thẳng có vạch số 0 đã bị mòn mất một đoạn để đo chiều dài cuốn sách Vật lí 10 mà không để ý hiệu chỉnh lại điểm đầu. Sai số mắc phải trong trường hợp này thuộc loại nào và cách khắc phục đúng là gì?",
+        opts: [
+            "A. Sai số ngẫu nhiên; khắc phục bằng cách đo nhiều lần trên cùng cây thước đó rồi lấy trung bình.",
+            "B. Sai số hệ thống; khắc phục bằng cách thay thước chuẩn hoặc đặt điểm đầu của vật tại một vạch nguyên rõ nét rồi trừ đi giá trị vạch đó.",
+            "C. Sai số tỉ đối; khắc phục bằng cách giữ nguyên kết quả đo đầu tiên mà không cần kiểm tra thước.",
+            "D. Sai số ngẫu nhiên; khắc phục bằng cách đọc kết quả từ góc nhìn xiên."
+        ],
+        ans: 1,
+        exp: "Sai lệch do dụng cụ (mòn vạch 0) lặp lại như nhau ở mọi lần đo nên là sai số hệ thống; cần đổi thước hoặc đo từ một vạch nguyên rõ nét."
+    },
+    {
+        q: "Độ lớn lực đàn hồi của lò xo được xác định bởi công thức F = k.Δl, trong đó lực F có đơn vị dẫn xuất là kg.m.s⁻² và độ biến dạng Δl có đơn vị là mét (m). Phát biểu nào sau đây về đơn vị của độ cứng k trong hệ SI là đúng?",
+        opts: [
+            "A. Độ cứng k là một trong 7 đơn vị cơ bản của hệ SI.",
+            "B. Đơn vị của k không phụ thuộc vào đơn vị của lực F và độ biến dạng Δl.",
+            "C. Đơn vị của k là đơn vị dẫn xuất, được suy ra từ công thức k = F/Δl và biểu diễn theo các đơn vị cơ bản là kg.s⁻².",
+            "D. Độ cứng k là hằng số vật lí nên không có đơn vị đo trong hệ SI."
+        ],
+        ans: 2,
+        exp: "Từ k = F/Δl ⇒ đơn vị của k là (kg.m.s⁻²) / m = kg.s⁻²."
+    },
+    {
+        q: "Một vận động viên bơi lội xuất phát từ đầu bể bơi A, bơi thẳng đến cuối bể bơi B rồi lập tức bơi ngược trở lại đúng vị trí xuất phát A. Nhận định nào sau đây về quãng đường đi được và độ dịch chuyển của vận động viên sau cả chuyến bơi là đúng?",
+        opts: [
+            "A. Quãng đường đi được bằng 0, còn độ lớn độ dịch chuyển bằng hai lần chiều dài bể bơi.",
+            "B. Quãng đường đi được bằng độ lớn độ dịch chuyển vì vận động viên chỉ bơi theo một đường thẳng.",
+            "C. Quãng đường đi được bằng hai lần chiều dài bể bơi, còn độ dịch chuyển bằng 0 vì vị trí cuối trùng với vị trí đầu.",
+            "D. Cả quãng đường đi được và độ dịch chuyển đều có giá trị âm vì vận động viên đã quay đầu."
+        ],
+        ans: 2,
+        exp: "Quãng đường là tổng chiều dài bơi đi và về (2AB), còn độ dịch chuyển nối điểm đầu A và điểm cuối A nên bằng 0."
+    },
+    {
+        q: "Một ô tô chuyển động trên một đường thẳng trong hai khoảng thời gian bằng nhau liên tiếp: nửa thời gian đầu đi với tốc độ v₁, nửa thời gian sau đi với tốc độ v₂ (v₁ < v₂). Nhận định nào sau đây về tốc độ trung bình của ô tô trong cả quá trình là đúng?",
+        opts: [
+            "A. Nhỏ hơn trung bình cộng của v₁ và v₂ vì nửa đoạn đầu xe đi chậm.",
+            "B. Bằng đúng trung bình cộng của hai tốc độ (v₁ + v₂)/2 vì hai giai đoạn diễn ra trong khoảng thời gian bằng nhau.",
+            "C. Lớn hơn trung bình cộng của v₁ và v₂ vì quãng đường đi được ở giai đoạn sau dài hơn.",
+            "D. Bằng hiệu của hai tốc độ (v₂ - v₁) chia đôi."
+        ],
+        ans: 1,
+        exp: "Khi t₁ = t₂ = t ⇒ v_tb = (s₁ + s₂)/(2t) = (v₁t + v₂t)/(2t) = (v₁ + v₂)/2."
+    },
+    {
+        q: "Một người đi bộ từ ngã tư O đi thẳng theo hướng Đông đến điểm A, sau đó rẽ vuông góc sang hướng Bắc đi thẳng đến điểm B thì dừng lại. Phát biểu nào sau đây về quãng đường đi được và độ dịch chuyển của người đó là đúng?",
+        opts: [
+            "A. Độ lớn độ dịch chuyển bằng tổng độ dài hai đoạn OA và AB vì hai đoạn đường vuông góc với nhau.",
+            "B. Độ dịch chuyển có hướng từ O đến B, có độ lớn bằng cạnh huyền OB của tam giác vuông OAB nên luôn nhỏ hơn quãng đường đi được (OA + AB).",
+            "C. Quãng đường đi được nhỏ hơn độ lớn độ dịch chuyển vì người đó đã rẽ hướng trên đường đi.",
+            "D. Độ dịch chuyển và quãng đường đều là các đại lượng vô hướng có cùng giá trị."
+        ],
+        ans: 1,
+        exp: "Quãng đường s = OA + AB, còn độ lớn độ dịch chuyển d = OB = √(OA² + AB²) < OA + AB."
+    },
+    {
+        q: "Một người chèo thuyền qua một con sông có dòng nước đang chảy đều. Người đó luôn giữ cho mũi thuyền hướng vuông góc với bờ sông. Nhận định nào sau đây về chuyển động thực tế của thuyền so với bờ sông là đúng?",
+        opts: [
+            "A. Thuyền đi theo đường thẳng vuông góc với bờ và cập bến ở điểm đối diện chính xác với điểm xuất phát.",
+            "B. Dòng nước đẩy thuyền trôi xuôi dòng, nên vận tốc của thuyền so với bờ là tổng hợp của hai vận tốc vuông góc, làm thuyền đi theo đường xiên và cập bến ở phía hạ lưu.",
+            "C. Vận tốc của dòng nước làm giảm thành phần vận tốc vuông góc với bờ của thuyền nên thời gian qua sông bị kéo dài hơn so với khi nước lặng.",
+            "D. Độ lớn vận tốc của thuyền so với bờ bằng tổng đại số độ lớn vận tốc của thuyền so với nước và vận tốc của nước so với bờ."
+        ],
+        ans: 1,
+        exp: "Do nước chảy đẩy thuyền xuôi dòng, vectơ vận tốc tổng hợp v⃗₁₃ = v⃗₁₂ + v⃗₂₃ hướng xiên về phía hạ lưu."
+    },
+    {
+        q: "Dùng đồ thị d – t của hai xe (1) và (2) cùng chuyển động trên một đường thẳng như hình dưới đây để trả lời câu 15 và câu 16. Nhận định nào sau đây về tính chất chuyển động của hai xe trong 4 s đầu là đúng?",
+        svg: svgPart1Cau15,
+        opts: [
+            "A. Xe (1) chuyển động nhanh dần, còn xe (2) chuyển động thẳng đều.",
+            "B. Xe (1) chuyển động thẳng đều theo chiều dương vì đồ thị là đường thẳng có độ dốc dương, còn xe (2) đang đứng yên vì đồ thị là đường thẳng song song với trục thời gian.",
+            "C. Hai xe chuyển động ngược chiều nhau và gặp nhau tại thời điểm t = 2 s.",
+            "D. Xe (2) luôn đi nhanh hơn xe (1) trong 2 s đầu vì đường biểu diễn của xe (2) nằm cao hơn."
+        ],
+        ans: 1,
+        exp: "Đồ thị d–t của xe (1) là đường thẳng xiên lên (độ dốc dương không đổi v₁ = 6 m/s), còn xe (2) nằm ngang ở d = 12 m (đứng yên)."
+    },
+    {
+        q: "Dựa vào đồ thị ở câu 15, nhận định nào sau đây về vị trí và tốc độ của hai xe tại thời điểm t = 2 s là đúng?",
+        opts: [
+            "A. Tại t = 2 s, hai đường đồ thị cắt nhau nên hai xe có cùng tốc độ tức thời.",
+            "B. Tại t = 2 s, hai xe ở cùng một vị trí cách gốc tọa độ 12 m, nhưng xe (1) có tốc độ lớn hơn xe (2) vì độ dốc đồ thị của xe (1) lớn hơn.",
+            "C. Trong 2 s đầu, quãng đường đi được của xe (1) và xe (2) đều bằng 12 m.",
+            "D. Sau thời điểm t = 2 s, xe (1) đổi chiều chuyển động để quay về gốc tọa độ."
+        ],
+        ans: 1,
+        exp: "Giao điểm tại (2 s; 12 m) cho biết hai xe ở cùng vị trí d = 12 m, nhưng xe (1) có tốc độ 6 m/s > tốc độ xe (2) (0 m/s)."
+    }
+];
+
+const tfData = [
+    {
+        title: "Câu 1 (1,0 điểm)",
+        stem: "Nhóm học sinh tiến hành thí nghiệm đo tốc độ của viên bi thép lăn trên máng nghiêng bằng cổng quang điện nối với đồng hồ đo thời gian hiện số (dùng nguồn điện 220 V) và thước kẹp. Quan sát: Khi thả viên bi từ cùng một vạch xuất phát, đồng hồ hiển thị thời gian chắn sáng ở các lần đo gần sát nhau nhưng vẫn có sự lệch nhỏ ở chữ số cuối. Dự đoán: Sai số của phép đo tốc độ phụ thuộc vào cả sai số đo đường kính viên bi và sai số đo thời gian chắn cổng quang điện. Kiểm tra: Nhóm kiểm tra lại quy tắc an toàn điện, đọc độ chia nhỏ nhất trên thước kẹp và thực hiện đo 5 lần liên tiếp để tính sai số tỉ đối.",
+        svg: "",
+        items: [
+            { label: "a)", text: "Phương pháp dùng cổng quang điện và đồng hồ đo thời gian hiện số có ưu điểm là giảm được sai số do phản xạ của người bấm đồng hồ.", ans: true },
+            { label: "b)", text: "Khi lắp ráp thí nghiệm, học sinh nên cắm điện cho đồng hồ hoạt động trước rồi mới cắm các giắc nối của cổng quang điện bằng tay ướt để dẫn điện tốt hơn.", ans: false },
+            { label: "c)", text: "Sai số dụng cụ (một dạng sai số hệ thống) của thước và đồng hồ đo thời gian hiện số thường được xác định dựa vào độ chia nhỏ nhất của chúng.", ans: true },
+            { label: "d)", text: "Vì tốc độ được tính gián tiếp qua công thức v = d/t nên sai số tỉ đối của phép đo tốc độ bằng hiệu sai số tỉ đối của phép đo đường kính và phép đo thời gian (δv = |δd - δt|).", ans: false }
+        ],
+        exp: "Giải thích: a) Đúng; b) Sai (cắm điện khi tay ướt gây nguy cơ điện giật); c) Đúng; d) Sai (sai số tỉ đối của một thương bằng TỔNG các sai số tỉ đối thành phần: δv = δd + δt)."
+    },
+    {
+        title: "Câu 2 (1,0 điểm)",
+        stem: "Nhóm học sinh khảo sát chuyển động của một người đi bộ trên một con đường thẳng dọc theo trục tọa độ Ox (gốc tọa độ O tại vị trí xuất phát, chiều dương là chiều chuyển động ban đầu). Dự đoán: Nếu người đó đi thẳng rồi quay đầu đi ngược lại nhưng chưa về tới vị trí xuất phát thì độ dịch chuyển vẫn mang giá trị dương. Kiểm tra: Nhóm ghi lại tọa độ theo thời gian và vẽ được đồ thị độ dịch chuyển – thời gian (d – t) như hình dưới đây.",
+        svg: svgPart2Cau2,
+        items: [
+            { label: "a)", text: "Trong giai đoạn từ 0 s đến 3 s, độ dốc của đồ thị không đổi và mang dấu dương nên người đó chuyển động thẳng đều theo chiều dương.", ans: true },
+            { label: "b)", text: "So sánh hai giai đoạn chuyển động (0 s – 3 s và 5 s – 9 s), tốc độ của người đó trong giai đoạn từ 5 s đến 9 s lớn hơn tốc độ trong giai đoạn từ 0 s đến 3 s vì thời gian đi lâu hơn.", ans: false },
+            { label: "c)", text: "Tại thời điểm t = 7 s, người đó đang đi ngược chiều dương nhưng vẫn cách điểm xuất phát 6 m về phía dương nên độ dịch chuyển tính từ lúc đầu vẫn có giá trị dương, đúng như dự đoán của nhóm.", ans: true },
+            { label: "d)", text: "Tính trong cả quá trình từ 0 s đến 9 s, vì tại thời điểm t = 9 s đồ thị cắt trục hoành (d = 0) nên cả tốc độ trung bình và vận tốc trung bình của người đó trong 9 s đều bằng 0.", ans: false }
+        ],
+        exp: "Giải thích: a) Đúng; b) Sai (Giai đoạn 0–3s có tốc độ 12/3 = 4 m/s, lớn hơn giai đoạn 5–9s có tốc độ 12/4 = 3 m/s); c) Đúng (tại t = 7s thì d = +6 m > 0); d) Sai (vận tốc trung bình bằng 0 nhưng tốc độ trung bình v_tb = 24/9 ≈ 2,67 m/s ≠ 0)."
+    }
+];
+
+const saData = [
+    {
+        num: "Câu 1 (0,25 điểm)",
+        q: "Một ô tô chạy trên đường thẳng dọc theo trục Ox: lúc 8 h ô tô ở tọa độ x₁ = 10 km, lúc 10 h ô tô ở tọa độ x₂ = 90 km. Vận tốc trung bình của ô tô trong khoảng thời gian đó là bao nhiêu km/h?",
+        svg: "",
+        ans: 40,
+        unit: "km/h",
+        exp: "Giải: v = (x₂ - x₁) / Δt = (90 - 10) / (10 - 8) = 40 km/h."
+    },
+    {
+        num: "Câu 2 (0,25 điểm)",
+        q: "Một chiếc thuyền máy chạy ngược dòng sông với tốc độ 6 m/s so với dòng nước. Biết nước sông chảy đều với tốc độ 1,5 m/s so với bờ. Tốc độ của thuyền máy so với bờ sông là bao nhiêu m/s?",
+        svg: "",
+        ans: 4.5,
+        unit: "m/s",
+        exp: "Giải: Chạy ngược dòng nên v₁₃ = v₁₂ - v₂₃ = 6 - 1,5 = 4,5 m/s."
+    },
+    {
+        num: "Câu 3 (0,25 điểm)",
+        q: "Một người chạy bộ trên đường thẳng từ vị trí xuất phát O đến điểm M cách O một đoạn 60 m hết 12 s, sau đó lập tức chạy ngược lại về đến điểm N (nằm giữa O và M, cách O một đoạn 24 m) hết thêm 8 s. Độ lớn vận tốc trung bình của người đó trong cả quá trình chạy là bao nhiêu m/s? (làm tròn đến hàng phần chục)",
+        svg: "",
+        ans: 1.2,
+        unit: "m/s",
+        exp: "Giải: Độ dịch chuyển tổng cộng d = ON = 24 m; tổng thời gian Δt = 12 + 8 = 20 s ⇒ v = d/Δt = 24/20 = 1,2 m/s."
+    },
+    {
+        num: "Câu 4 (0,25 điểm)",
+        q: "Đồ thị độ dịch chuyển – thời gian (d – t) của một vật chuyển động thẳng đều được cho như hình bên dưới. Tốc độ của vật là bao nhiêu m/s?",
+        svg: svgPart3Cau4,
+        ans: 2.5,
+        unit: "m/s",
+        exp: "Giải: Tốc độ bằng độ dốc đồ thị: v = Δd / Δt = (20 - 0) / (8 - 0) = 2,5 m/s."
+    }
+];
+
+
+const svgExp1=`<div class="svg-container" style="max-width:400px; margin-top:8px;">
+                    <svg viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="420" height="230" fill="#ffffff"/>
+                        <!-- Grid -->
+                        <g stroke="#e2e8f0" stroke-width="1">
+                            <line x1="50" y1="30" x2="390" y2="30"/>
+                            <line x1="50" y1="70" x2="390" y2="70"/>
+                            <line x1="50" y1="110" x2="390" y2="110"/>
+                            <line x1="50" y1="150" x2="390" y2="150"/>
+                            <line x1="114" y1="30" x2="114" y2="190"/>
+                            <line x1="178" y1="30" x2="178" y2="190"/>
+                            <line x1="242" y1="30" x2="242" y2="190"/>
+                            <line x1="306" y1="30" x2="306" y2="190"/>
+                            <line x1="370" y1="30" x2="370" y2="190"/>
+                        </g>
+                        <!-- Axes -->
+                        <line x1="50" y1="190" x2="400" y2="190" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="50" y1="190" x2="50" y2="15" stroke="#1e293b" stroke-width="2"/>
+                        <!-- Plot (0,0)->(6,12)->(9,12)->(15,0) -->
+                        <polyline points="50,190 114,110 178,30 242,30 306,110 370,190" fill="none" stroke="#1e40af" stroke-width="3"/>
+                        <circle cx="50" cy="190" r="4" fill="#1e40af"/>
+                        <circle cx="114" cy="110" r="4" fill="#1e40af"/>
+                        <circle cx="178" cy="30" r="4" fill="#1e40af"/>
+                        <circle cx="242" cy="30" r="4" fill="#1e40af"/>
+                        <circle cx="306" cy="110" r="4" fill="#1e40af"/>
+                        <circle cx="370" cy="190" r="4" fill="#1e40af"/>
+                        <!-- Labels -->
+                        <text x="20" y="20" font-size="13" font-weight="bold" fill="#0f172a">d (m)</text>
+                        <text x="385" y="218" font-size="13" font-weight="bold" fill="#0f172a">t (s)</text>
+                        <text x="30" y="194" font-size="12">0</text>
+                        <text x="30" y="114" font-size="12">6</text>
+                        <text x="23" y="34" font-size="12">12</text>
+                        <text x="46" y="208" font-size="12">0</text>
+                        <text x="110" y="208" font-size="12">3</text>
+                        <text x="174" y="208" font-size="12">6</text>
+                        <text x="238" y="208" font-size="12">9</text>
+                        <text x="299" y="208" font-size="12">12</text>
+                        <text x="363" y="208" font-size="12">15</text>
+                    </svg>
+                </div>`;
+const $=s=>document.querySelector(s),A={},S={name:'',cls:'',id:'',on:false,done:false,t:45*60,sync:null};
+let F='auto',E=28,cur=0,tm=null;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+function parseNum(v){if(!v)return NaN;return parseFloat(String(v).trim().replace(',','.').replace('+','').replace('−','-'))}
+
+const esData=[
+{title:'Bài 1 (1,5 điểm) – Đồ thị độ dịch chuyển – thời gian',
+stem:`Một người đi xe đạp chuyển động trên một đường thẳng, chọn gốc tọa độ tại vị trí xuất phát, chiều dương là chiều chuyển động ban đầu. Bảng số liệu ghi lại độ dịch chuyển <b>d</b> của xe theo thời gian <b>t</b>:<table><tr><th>t (s)</th><td>0</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td></tr><tr><th>d (m)</th><td>0</td><td>6</td><td>12</td><td>12</td><td>6</td><td>0</td></tr></table>`,
+parts:[
+{k:'1a',sub:'a) (0,5 điểm) Vẽ đồ thị độ dịch chuyển – thời gian (d – t) của xe đạp:',f:[
+ {id:'tl1a_1',lb:'Từ t = 0 s đến t = 6 s, đồ thị là đoạn thẳng:',t:'s',a:'up',o:[['up','Đi lên từ (0; 0) đến (6; 12)'],['flat','Nằm ngang tại d = 12 m'],['down','Đi xuống từ (6; 12) về (0; 0)']]},
+ {id:'tl1a_2',lb:'Từ t = 6 s đến 9 s và từ 9 s đến 15 s:',t:'s',a:'correct',o:[['correct','Nằm ngang (6 s–9 s) tại d = 12 m, rồi đi xuống về (15; 0)'],['wrong1','Đi lên tiếp đến d = 24 m rồi nằm ngang'],['wrong2','Đi xuống về (9; 0) rồi nằm ngang đến 15 s']]}],
+ exp:`<b>Đáp án 1a:</b> đồ thị gồm 3 đoạn thẳng: đi lên từ (0;0) đến (6;12); nằm ngang từ (6;12) đến (9;12); đi xuống từ (9;12) về (15;0).${svgExp1}`},
+{k:'1b',sub:'b) (0,5 điểm) Tính vận tốc của xe đạp trong từng giai đoạn chuyển động:',f:[
+ {id:'tl1b_1',lb:'Vận tốc giai đoạn 1 (0 s đến 6 s) v₁ (m/s):',t:'n',a:2},
+ {id:'tl1b_2',lb:'Giai đoạn 2 (6 s–9 s) có v₂ = 0. Vận tốc giai đoạn 3 (9 s–15 s) v₃ (m/s):',t:'n',a:-2}],
+ exp:`<b>Đáp án 1b:</b> v₁ = (12 − 0)/6 = <b>2 m/s</b>; v₂ = 0; v₃ = (0 − 12)/(15 − 9) = <b>−2 m/s</b>.`},
+{k:'1c',sub:'c) (0,5 điểm) Tính tốc độ trung bình và vận tốc trung bình của xe đạp trong 15 s:',f:[
+ {id:'tl1c_1',lb:'Tốc độ trung bình v_tb trong 15 s (m/s):',t:'n',a:1.6},
+ {id:'tl1c_2',lb:'Vận tốc trung bình v trong 15 s (m/s):',t:'n',a:0}],
+ exp:`<b>Đáp án 1c:</b> quãng đường s = 12 + 0 + 12 = 24 m ⇒ v_tb = 24/15 = <b>1,6 m/s</b>; độ dịch chuyển d = 0 ⇒ vận tốc trung bình = <b>0 m/s</b>.`}]},
+{title:'Bài 2 (1,5 điểm) – Đoàn tàu vượt qua xe đạp',
+stem:`Trên hai làn đường thẳng song song, một đoàn tàu hỏa gồm <b>8 toa</b>, mỗi toa dài <b>15 m</b> (bỏ qua khoảng nối giữa các toa và chiều dài đầu tàu, xem kích thước xe đạp không đáng kể) chuyển động thẳng đều với tốc độ <b>14 m/s</b> so với mặt đất để vượt qua một người đi xe đạp. Người này chuyển động thẳng đều <b>cùng chiều</b> với đoàn tàu với tốc độ <b>4 m/s</b> so với mặt đất.<br><b>Quy ước:</b> (1) là đoàn tàu, (2) là người đi xe đạp, (3) là mặt đất; chiều dương là chiều chuyển động của đoàn tàu.`,
+parts:[
+{k:'2a',sub:'a) (0,5 điểm) Tính tổng chiều dài L của đoàn tàu và xác định v₁₃, v₂₃ theo chiều dương:',f:[
+ {id:'tl2a_1',lb:'Tổng chiều dài L của 8 toa tàu (m):',t:'n',a:120},
+ {id:'tl2a_2',lb:'Giá trị v₁₃ và v₂₃ theo chiều dương:',t:'s',a:'correct',o:[['correct','v₁₃ = +14 m/s; v₂₃ = +4 m/s'],['w1','v₁₃ = +14 m/s; v₂₃ = −4 m/s'],['w2','v₁₃ = −14 m/s; v₂₃ = +4 m/s']]}],
+ exp:`<b>Đáp án 2a:</b> L = 8 · 15 = <b>120 m</b>; v₁₃ = <b>+14 m/s</b>, v₂₃ = <b>+4 m/s</b>.`},
+{k:'2b',sub:'b) (0,5 điểm) Viết công thức cộng vận tốc và tính độ lớn vận tốc v₁₂ của tàu so với người đi xe đạp:',f:[
+ {id:'tl2b_1',lb:'Công thức cộng vận tốc đúng:',t:'s',a:'correct',o:[['correct','v⃗₁₃ = v⃗₁₂ + v⃗₂₃ (suy ra v₁₂ = v₁₃ − v₂₃)'],['w1','v⃗₁₃ = v⃗₁₂ − v⃗₂₃ (suy ra v₁₂ = v₁₃ + v₂₃)'],['w2','v₁₂ = v₁₃ . v₂₃']]},
+ {id:'tl2b_2',lb:'Độ lớn vận tốc v₁₂ của tàu so với xe đạp (m/s):',t:'n',a:10}],
+ exp:`<b>Đáp án 2b:</b> v⃗₁₃ = v⃗₁₂ + v⃗₂₃; chiếu lên chiều dương: v₁₂ = v₁₃ − v₂₃ = 14 − 4 = <b>10 m/s</b>.`},
+{k:'2c',sub:'c) (0,5 điểm) Tính thời gian cả đoàn tàu vượt qua hoàn toàn người đi xe đạp và quãng đường xe đạp đi được trên mặt đất trong thời gian đó:',f:[
+ {id:'tl2c_1',lb:'Thời gian tàu vượt qua xe đạp t (s):',t:'n',a:12},
+ {id:'tl2c_2',lb:'Quãng đường xe đạp đi được trên mặt đất s₂ (m):',t:'n',a:48}],
+ exp:`<b>Đáp án 2c:</b> t = L/v₁₂ = 120/10 = <b>12 s</b>; s₂ = v₂₃ · t = 4 · 12 = <b>48 m</b>.`}]}
+];
+
+const pages=[{t:'info',lb:'ⓘ'}];
+mcqData.forEach((_,i)=>pages.push({t:'m',i,lb:i+1}));
+tfData.forEach((d,i)=>d.items.forEach((_,j)=>pages.push({t:'f',i,j,lb:'Đ'+(i+1)+'abcd'[j]})));
+saData.forEach((_,i)=>pages.push({t:'s',i,lb:'T'+(i+1)}));
+esData.forEach((b,bi)=>b.parts.forEach((p,pi)=>pages.push({t:'e',bi,pi,lb:'TL'+p.k})));
+const QN=pages.length-1;
+
+const fok=f=>{const v=A['e_'+f.id];return f.t==='s'?v===f.a:Math.abs(parseNum(v)-f.a)<0.05};
+const locked=p=>S.done||(p.t==='m'?A['m'+p.i]!==undefined:p.t==='f'?A['f'+p.i+'_'+p.j]!==undefined:p.t==='s'?!!A['sk'+p.i]:p.t==='e'?!!A['ek'+esData[p.bi].parts[p.pi].k]:false);
+function good(p){
+ if(p.t==='m')return A['m'+p.i]===mcqData[p.i].ans;
+ if(p.t==='f')return A['f'+p.i+'_'+p.j]===String(tfData[p.i].items[p.j].ans);
+ if(p.t==='s')return Math.abs(parseNum(A['s'+p.i])-saData[p.i].ans)<0.05;
+ if(p.t==='e')return esData[p.bi].parts[p.pi].f.every(fok);
+}
+const st=p=>(p.t==='info'||p.t==='res')?'':locked(p)?(good(p)?'ok':'no'):'';
+function score(){let a=0,b=0,c=0,d=0;
+ mcqData.forEach((x,i)=>{if(A['m'+i]===x.ans)a+=.25});
+ tfData.forEach((x,i)=>x.items.forEach((y,j)=>{if(A['f'+i+'_'+j]===String(y.ans))b+=.25}));
+ saData.forEach((x,i)=>{if(Math.abs(parseNum(A['s'+i])-x.ans)<0.05)c+=.25});
+ esData.forEach(x=>x.parts.forEach(p=>p.f.forEach(f=>{if(fok(f))d+=.25})));
+ return[a,b,c,d]}
+
+const hd=(a,b)=>`<div class="hd"><b>${a}</b><span>${b}</span></div>`;
+const ex=h=>`<div class="exp">${h}</div>`;
+function info(){return `<div class="q" style="text-align:center"><b style="color:var(--p)">ĐỀ ÔN TẬP KIỂM TRA GIỮA HỌC KỲ I – ĐỀ 02</b><br>Vật Lí 10 (GDPT 2018) · 45 phút</div>
+<div class="q">Mỗi trang một câu. Chọn xong: <b style="color:var(--ok)">đúng → màu xanh</b>, <b style="color:var(--no)">sai → màu đỏ</b> (không đổi lại được).</div>
+<div class="q">Họ và tên (*)<br><input class="inp w" data-a="info" data-f="name" value="${esc(S.name)}" placeholder="Nhập đầy đủ họ và tên..."></div>
+<div class="q">Lớp (*) <input class="inp" data-a="info" data-f="cls" value="${esc(S.cls)}" placeholder="10A1"> &nbsp; SBD <input class="inp" data-a="info" data-f="id" value="${esc(S.id)}" placeholder="tùy chọn"></div>
+<button class="btn" data-a="go">${S.on?'Tiếp tục ▶':'▶ Bắt đầu làm bài'}</button>`}
+function resP(){const[a,b,c,d]=score(),f=n=>n.toFixed(2).replace('.',',');
+ return `<div class="q" style="text-align:center"><b>KẾT QUẢ BÀI LÀM</b><br>${esc(S.name)} · Lớp ${esc(S.cls)}<div class="big">${f(a+b+c+d)} / 10,0 điểm</div></div>
+<div class="q">Phần I: ${f(a)} / 4,0<br>Phần II: ${f(b)} / 2,0<br>Phần III: ${f(c)} / 1,0<br>Tự luận: ${f(d)} / 3,0</div>
+${S.sync?`<div class="sy ${S.sync.c}">${S.sync.m}</div>`:''}<br><button class="btn" data-a="rv">↺ Xem lại bài (đáp án đã hiện)</button>`}
+
+function pg(p){
+ if(p.t==='info')return info();
+ if(p.t==='res')return resP();
+ const L=locked(p);
+ if(p.t==='m'){const d=mcqData[p.i],k=A['m'+p.i];
+  return hd('Câu '+(p.i+1),'Phần I · 0,25 điểm')+`<div class="q">${d.q}</div>${d.svg||''}`+d.opts.map((o,x)=>`<button class="opt ${L?(x===d.ans?'ok':x===k?'no':''):''}" data-a="m" data-i="${p.i}" data-x="${x}" ${L?'disabled':''}>${o}</button>`).join('')+(L?ex(`<b>Đáp án đúng:</b> ${d.opts[d.ans]}<br>${d.exp}`):'')}
+ if(p.t==='f'){const d=tfData[p.i],it=d.items[p.j],k=A['f'+p.i+'_'+p.j],an=String(it.ans);
+  const e=d.exp.replace('Giải thích: ','').split(/; (?=[a-d]\) )/)[p.j];
+  const b=(v,l)=>`<button class="opt ${L?(v===an?'ok':v===k?'no':''):''}" data-a="f" data-i="${p.i}" data-j="${p.j}" data-x="${v}" ${L?'disabled':''}>${l}</button>`;
+  return hd(d.title.replace(/ \(.*\)/,'')+' · ý '+it.label,'Phần II · 0,25 điểm')+`<details ${p.j?'':'open'}><summary>📄 Dữ kiện &amp; hình vẽ của câu (bấm để xem/ẩn)</summary><div class="q">${d.stem}</div>${d.svg}</details><div class="q"><b>${it.label}</b> ${it.text}</div><div class="tfb">${b('true','Đúng')}${b('false','Sai')}</div>`+(L?ex('<b>Giải thích:</b> '+e):'')}
+ if(p.t==='s'){const d=saData[p.i],v=A['s'+p.i]||'',c=L?(good(p)?'ok':'no'):'';
+  return hd(d.num.replace(/ \(.*\)/,''),'Phần III · 0,25 điểm')+`<div class="q">${d.q}</div>${d.svg}<div class="q"><b>Đáp số:</b> <input class="inp ${c}" data-a="sv" data-i="${p.i}" value="${esc(v)}" placeholder="Nhập số" ${L?'disabled':''}> ${d.unit} ${L?'':`<button class="btn" data-a="sk" data-i="${p.i}">Kiểm tra</button>`}</div>`+(L?ex(`<b>Đáp số đúng: ${String(d.ans).replace('.',',')} ${d.unit}</b><br>${d.exp}`):'')}
+ const b=esData[p.bi],q=b.parts[p.pi];
+ return hd(b.title.split(' – ')[0].replace(/ \(.*\)/,'')+' · ý '+q.k.slice(1),'Phần B · 0,25 điểm/ô')+`<details ${p.pi?'':'open'}><summary>📄 Đề bài &amp; số liệu (bấm để xem/ẩn)</summary><div class="q">${b.stem}</div></details><div class="q"><b>${q.sub}</b></div>`+q.f.map(f=>{const v=A['e_'+f.id]||'',c=L?(fok(f)?'ok':'no'):'';
+  return `<div class="q">${f.lb}<br>`+(f.t==='s'?`<select class="inp ${c}" data-a="ev" data-id="${f.id}" ${L?'disabled':''}><option value="">-- Chọn --</option>${f.o.map(o=>`<option value="${o[0]}" ${v===o[0]?'selected':''}>${o[1]}</option>`).join('')}</select>`:`<input class="inp ${c}" data-a="ev" data-id="${f.id}" value="${esc(v)}" placeholder="Nhập số" ${L?'disabled':''}>`)+`</div>`}).join('')+(L?ex(q.exp):`<button class="btn" data-a="ek" data-k="${q.k}">Kiểm tra</button>`)}
+
+function fit(){const s=$('#stage'),k=Math.min(1,Math.max(.6,innerWidth/900)),z=F==='auto'?[40,38,36,34,32,30,28]:[F];
+ for(const x of z){E=x;document.documentElement.style.setProperty('--fs',x*k+'px');if(s.scrollHeight<=s.clientHeight+1)break}
+ $('#fsl').textContent=(F==='auto'?'Tự động · ':'')+E+'px'}
+function redraw(){$('#page').innerHTML=pg(pages[cur]);const e=$('.exp');if(e)e.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function show(n){if(!S.on&&n>0){alert('Nhập Họ tên, Lớp rồi bấm "Bắt đầu làm bài" trước nhé!');return}
+ cur=Math.max(0,Math.min(pages.length-1,n));const p=pages[cur];$('#page').innerHTML=pg(p);$('#stage').scrollTop=0;fit();
+ $('#lb').textContent=p.t==='info'?'Thông tin':p.t==='res'?'Kết quả':`Trang ${cur}/${QN}`;$('#bar').style.width=Math.min(cur,QN)/QN*100+'%'}
+function openMap(){const w=$('#mapw');if(w.classList.toggle('on'))$('#map').innerHTML=pages.slice(1).map((p,k)=>`<button class="mp ${st(p)} ${k+1===cur?'cu':''}" data-a="gt" data-i="${k+1}">${p.lb}</button>`).join('')}
+const tick=()=>{const m=Math.floor(S.t/60),s=S.t%60;$('#tm').textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s};
+function setSync(o){S.sync=o;if(pages[cur].t==='res')redraw()}
+
+function submit(auto){
+ if(S.done)return;if(!S.on){alert('Bạn chưa bắt đầu làm bài.');return}
+ if(!auto){const n=pages.filter(p=>p.t!=='info'&&p.t!=='res'&&!locked(p)).length;
+  if(!confirm((n?`Còn ${n} trang chưa trả lời/kiểm tra. `:'')+'Bạn chắc chắn muốn nộp bài và xem kết quả?'))return}
+ S.done=true;clearInterval(tm);$('#sub').disabled=true;$('#sub').textContent='ĐÃ NỘP';
+ pages.push({t:'res',lb:'🏁'});show(pages.length-1);
+ const[a,b,c,d]=score(),tot=(a+b+c+d).toFixed(2),used=2700-S.t;
+ setSync({c:'wt',m:'⏳ Đang lưu điểm vào hệ thống Google Drive của Thầy Cường...'});
+ fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+  hoTen:S.name||'Không tên',lop:S.cls||'Không rõ',sbd:S.id,maDe:'Vật Lí 10 - Giữa HK1 - Đề 02',
+  diemPhan1:a.toFixed(2),diemPhan2:b.toFixed(2),diemPhan3:c.toFixed(2),diemTuLuan:d.toFixed(2),tongDiem:tot,
+  thoiGianLamBai:`${Math.floor(used/60)}p ${used%60}s`,ngayNop:new Date().toLocaleString('vi-VN')})})
+ .then(()=>setSync({c:'ok',m:'✅ Đã lưu điểm thành công vào Google Drive!'}))
+ .catch(()=>setSync({c:'no',m:'⚠️ Không thể kết nối mạng để lưu tự động. Em hãy chụp màn hình kết quả này gửi qua Zalo cho Thầy nhé!'}))}
+
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-a]');if(!t||t.tagName==='INPUT'||t.tagName==='SELECT')return;
+ const a=t.dataset.a,i=+t.dataset.i,x=t.dataset.x;
+ if(a==='fs'){const c=F==='auto'?E:F;F=x==='a'?'auto':x==='+'?Math.min(40,c+2):Math.max(28,c-2);fit();return}
+ if(a==='mp'){openMap();return}
+ if(a==='gt'){$('#mapw').classList.remove('on');show(i);return}
+ if(a==='pv'){show(cur-1);return}if(a==='nx'){show(cur+1);return}
+ if(a==='sub'){submit();return}if(a==='rv'){show(1);return}
+ if(a==='go'){if(!S.name.trim()||!S.cls.trim()){alert('Vui lòng nhập đầy đủ Họ và tên, Lớp!');return}
+  if(!S.on){S.on=true;tm=setInterval(()=>{S.t--;if(S.t<=0){S.t=0;tick();submit(true);return}tick()},1000)}show(1);return}
+ if(a==='m')A['m'+i]=+x;
+ else if(a==='f')A['f'+i+'_'+t.dataset.j]=x;
+ else if(a==='sk')A['sk'+i]=1;
+ else if(a==='ek')A['ek'+t.dataset.k]=1;
+ redraw()});
+document.addEventListener('input',e=>{const t=e.target,a=t.dataset.a;
+ if(a==='info')S[t.dataset.f]=t.value;else if(a==='sv')A['s'+t.dataset.i]=t.value;else if(a==='ev')A['e_'+t.dataset.id]=t.value});
+document.addEventListener('keydown',e=>{const t=e.target,a=t.dataset&&t.dataset.a;
+ if(e.key==='Enter'&&a==='sv'){A['sk'+t.dataset.i]=1;redraw();return}
+ if(/INPUT|SELECT/.test(t.tagName))return;
+ if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
+addEventListener('resize',fit);
+window.onload=()=>show(0);
+</script>
+</body>
+</html>
