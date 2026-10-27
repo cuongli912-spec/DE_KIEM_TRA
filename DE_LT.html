@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ôn tập giữa HKI – Vật lí 10 (Lí thuyết điền khuyết)</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#1b2433;--mu:#5b6b82;--pr:#0b5fa5;--bar:#0b3d6e;--ac:#e8f1fb;--gv:#fff4c2;--gvb:#e0b400;--bd:#d5dce8}
+body.dark{--bg:#10151f;--card:#18202e;--tx:#e6ebf5;--mu:#9fb0c8;--pr:#6cb6ff;--bar:#0a2a4a;--ac:#1f2c42;--gv:#3a3318;--gvb:#a88a00;--bd:#2c3850}
+*{box-sizing:border-box}html{font-size:var(--fs,22px)}
+body{margin:0;padding-top:calc(34px + env(safe-area-inset-top,0px));background:var(--bg);color:var(--tx);font-family:"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
+#bar{position:fixed;top:0;left:0;right:0;height:calc(30px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:4px;padding:env(safe-area-inset-top,0px) 6px 0;background:var(--bar);color:#fff;font-size:13px;z-index:50}
+#tabs{display:flex;gap:3px;flex:1;overflow-x:auto;scrollbar-width:none}#tabs::-webkit-scrollbar{display:none}
+.b{font:13px/1 inherit;height:22px;min-width:26px;padding:0 7px;border:0;border-radius:4px;background:rgba(255,255,255,.18);color:#fff;cursor:pointer;white-space:nowrap;flex:none}
+.b.on{background:#fff;color:var(--bar);font-weight:700}
+main{padding:.45rem .6rem}.p{display:none}.p.on{display:block}
+.h{display:flex;align-items:center;gap:.6rem;margin:.1rem 0 .45rem;font-size:1.15rem;font-weight:700;color:var(--pr)}
+.g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:.6rem;align-items:start}
+.L{position:sticky;top:calc(38px + env(safe-area-inset-top,0px));max-height:calc(100vh - 44px - env(safe-area-inset-top,0px));overflow:auto}
+@media(max-width:800px){.g{grid-template-columns:1fr}.L{position:static;max-height:none}}
+.md{background:var(--card);border:1px solid var(--bd);border-radius:.5rem;padding:.35rem;margin-bottom:.5rem}
+.md svg{width:100%;max-height:38vh;display:block}
+.md input[type=range]{width:100%;height:1.7rem;accent-color:var(--pr)}
+.mb{padding:.28rem .6rem;font-size:.78rem;border-radius:.4rem;border:1px solid var(--pr);background:var(--card);color:var(--pr);cursor:pointer;margin:.12rem}
+.mb:hover{background:var(--ac)}.rv{background:var(--pr);color:var(--card)}
+.ro{font-size:.8rem;background:var(--ac);border-radius:.4rem;padding:.3rem .5rem;min-height:2.4rem}
+.ax{stroke:var(--mu);stroke-width:1.2}.tx{fill:var(--tx);font-size:11px}.mt{fill:var(--mu);font-size:10px}
+.kn{background:var(--card);border:1px solid var(--bd);border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.88rem}
+.kt{font-weight:700;color:var(--pr);margin-bottom:.15rem}
+.pr{background:var(--card);border:2px solid var(--pr);border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.9rem}
+.chip{display:inline-block;background:var(--ac);border:1px solid var(--pr);border-radius:1rem;padding:.1rem .6rem;margin:.15rem;font-size:.82rem}
+textarea{width:100%;min-height:4rem;font:inherit;font-size:.85rem;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:.4rem}
+label{display:block;font-size:.88rem;margin:.2rem 0}
+
+.bk{cursor:pointer;border-bottom:2px dotted var(--pr);padding:0 .2rem;border-radius:.2rem;line-height:1.35}
+.bk::before{content:"……"}
+.bk.on{background:var(--ac);color:var(--pr);font-weight:700;border-bottom:2px solid var(--pr)}
+.bk.on::before{content:attr(data-a)}
+.kn ul{margin:.1rem 0;padding-left:1.1rem}.kn li{margin:.35rem 0}
+.wr{border-left:5px solid var(--gvb);background:var(--gv)}
+.tip{font-size:.78rem;color:var(--mu);margin:0 0 .4rem}
+.cnt{margin-left:auto;font-size:.8rem;color:var(--mu);font-weight:400}
+.tb{border-collapse:collapse;width:100%;font-size:.88rem}.tb th,.tb td{border:1px solid var(--bd);padding:.3rem .4rem;text-align:left;vertical-align:top}.tb th{background:var(--card)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.sc{text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:.5rem;padding:.4rem;font-size:.85rem}.si{font-size:2.3rem;border-radius:.4rem;padding:.15rem;margin-bottom:.2rem}
+</style></head><body>
+<div id="bar"><div id="tabs"></div><button class="b" id="fm" title="Giảm cỡ chữ">A−</button><button class="b" id="fn" title="Cỡ chữ hiện tại – bấm để về 22px">22</button><button class="b" id="fp" title="Tăng cỡ chữ">A+</button><button class="b" id="fa" title="Hiện / ẩn tất cả đáp án của bài này">👁</button><button class="b" id="fd" title="Chế độ tối">🌙</button></div>
+<main id="M"></main>
+<script>
+const $=s=>document.querySelector(s),f=(x,d)=>x.toFixed(d).replace('.',',');
+const DEF='<defs>'+[['ar1','#0b5fa5'],['ar2','#1a8a4a'],['ar3','#c0392b']].map(a=>`<marker id="${a[0]}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="${a[1]}"/></marker>`).join('')+'</defs>';
+/* ---------- Hàm dựng mô hình chung: thanh trượt, phát, mốc, hiện kết quả, đối chứng ---------- */
+function mk(id,c){
+ const e=document.getElementById(id),s={p:0,show:false,x:{}};let iv=0;
+ e.innerHTML=`<svg viewBox="0 0 400 190">${DEF}<g></g></svg><input type="range" min="0" max="100" step="1" value="0"><div class="mc"><button class="mb">▶ Phát</button>${c.ms.map((m,i)=>`<button class="mb" data-m="${i}">${m[0]}</button>`).join('')}${(c.ctrl||[]).map((m,i)=>`<button class="mb" data-c="${i}">${m[0]}</button>`).join('')}<button class="mb rv">👁 Hiện kết quả</button></div><div class="ro"></div>`;
+ const g=e.querySelector('g'),r=e.querySelector('input'),o=e.querySelector('.ro'),pb=e.querySelector('.mc .mb'),rv=e.querySelector('.rv');
+ const R=()=>{g.innerHTML=c.draw(s);o.innerHTML=c.info(s);r.value=s.p;rv.textContent=s.show?'🙈 Ẩn kết quả':'👁 Hiện kết quả'};
+ const stop=()=>{clearInterval(iv);iv=0;pb.textContent='▶ Phát'};
+ r.oninput=()=>{stop();s.p=+r.value;R()};
+ pb.onclick=()=>{if(iv)return stop();if(s.p>=100)s.p=0;pb.textContent='⏸ Dừng';iv=setInterval(()=>{s.p=Math.min(100,s.p+.5);R();if(s.p>=100)stop()},30)};
+ e.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;
+  if(b.dataset.m!=null){stop();s.p=c.ms[b.dataset.m][1];R()}
+  else if(b.dataset.c!=null){stop();c.ctrl[b.dataset.c][1](s);R()}
+  else if(b===rv){s.show=!s.show;R()}};
+ R()}
+const ln=(a,b,c,d,col,w,m)=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${col}" stroke-width="${w||2}"${m?` marker-end="url(#${m})"`:''}/>`;
+/* M1: s – d, tốc độ – vận tốc (đi 60 m Đông trong 15 s, quay lại 20 m trong 5 s) */
+const M1={ms:[['t = 0',0],['t = 15 s',75],['t = 20 s',100]],ctrl:[['⇄ Không quay đầu',s=>s.x.nb=!s.x.nb]],
+ T:p=>p/5,
+ pos(s){const t=s.p/5;return t<=15?4*t:(s.x.nb?60+4*(t-15):60-4*(t-15))},
+ draw(s){const t=s.p/5,pos=this.pos(s),fw=Math.min(t,15)*4,X=m=>30+m*4.4;
+  let h=ln(X(0),70,X(80),70,'var(--mu)',1.5);
+  [0,20,40,60,80].forEach(m=>h+=ln(X(m),65,X(m),75,'var(--mu)',1.2)+`<text class="tx" x="${X(m)}" y="90" text-anchor="middle">${m}</text>`);
+  h+=`<text class="mt" x="385" y="104" text-anchor="end">x (m)</text>`+ln(X(0),128,X(fw),128,'#e67e22',5)+ln(X(fw),142,X(pos),142,'#e67e22',5)
+   +`<text class="tx" x="30" y="165" fill="#e67e22">▬ quãng đường đã đi s</text><text class="tx" x="30" y="30">→ độ dịch chuyển d⃗ (xanh)</text>`
+   +ln(X(0),48,X(Math.max(pos,.01)),48,'#0b5fa5',3,'ar1')+`<circle cx="${X(pos)}" cy="70" r="7" fill="#c0392b"/>`;return h},
+ info(s){const t=s.p/5,pos=this.pos(s),st=t<=15?4*t:60+4*(t-15);
+  return `t = ${f(t,1)} s · `+(s.show?`s = ${f(st,0)} m · d = ${f(pos,0)} m`+(t>0?` · v = s/t = ${f(st/t,1)} m/s · v⃗ = d/t = ${f(pos/t,1)} m/s`:''):'s = ? · d = ? · v = ? · v⃗ = ?  (tự tính trước)')}};
+/* M2: sai số – 5 lần đo thời gian, ĐCNN 0,02 s ⇒ ΔA_dc = 0,01 s */
+const V2=[2.02,1.98,2.04,2.00,1.96];
+const M2={ms:[['n = 1',0],['n = 3',50],['n = 5',100]],ctrl:[['⇄ Bỏ / thêm ΔA_dc',s=>s.x.nd=!s.x.nd]],
+ st(s){const n=Math.min(5,Math.floor(s.p/25)+1),a=V2.slice(0,n),m=a.reduce((x,y)=>x+y)/n,dm=a.reduce((x,y)=>x+Math.abs(y-m),0)/n,dc=s.x.nd?0:.01;return{n,a,m,dm,dc,da:dm+dc}},
+ draw(s){const q=this.st(s),X=v=>40+(v-1.94)/.12*320;let h=ln(40,110,360,110,'var(--mu)',1.5);
+  for(let v=1.94;v<2.065;v+=.02)h+=ln(X(v),105,X(v),115,'var(--mu)',1.2)+`<text class="tx" x="${X(v)}" y="130" text-anchor="middle">${f(v,2)}</text>`;
+  q.a.forEach((v,i)=>h+=`<circle cx="${X(v)}" cy="${90-(i%2)*16}" r="6" fill="#0b5fa5"/>`);
+  h+=ln(X(q.m),55,X(q.m),112,'#c0392b',2)+`<text class="tx" x="${X(q.m)}" y="50" text-anchor="middle" fill="#c0392b">Ā</text><text class="mt" x="385" y="145" text-anchor="end">t (s)</text>`;
+  if(s.show)h+=ln(X(q.m-q.da),160,X(q.m+q.da),160,'#1a8a4a',6)+`<text class="tx" x="${X(q.m)}" y="180" text-anchor="middle">Ā ± ΔA</text>`;return h},
+ info(s){const q=this.st(s);return s.show?`Ā = ${f(q.m,3)} · ΔĀ = ${f(q.dm,3)} · ΔA_dc = ${f(q.dc,2)} · ΔA = ${f(q.da,3)} ⇒ <b>t = ${f(q.m,2)} ± ${f(q.da,2)} s</b>, δA = ${f(q.da/q.m*100,1)}%`:`n = ${q.n} lần đo (chấm xanh) · tự tính Ā, ΔĀ, ΔA, δA (ĐCNN 0,02 s)`}};
+/* M3: tổng hợp hai vectơ (độ dịch chuyển, vận tốc) */
+const MD=[{n:'d⃗ vuông góc',a:[3,0],b:[0,4],la:'d⃗₁ = 3 m (Đông)',lb:'d⃗₂ = 4 m (Bắc)',f:'d = √(3²+4²) = 5 m · tanα = 4/3 ⇒ α ≈ 53°'},
+ {n:'d⃗ quay đầu',a:[6,0],b:[-2,0],la:'d₁ = +6 m',lb:'d₂ = −2 m',f:'d = 6 + (−2) = 4 m (còn s = 8 m)'},
+ {n:'v⃗ xuôi dòng',a:[4,0],b:[3,0],la:'v₁,₂ = 4 m/s',lb:'v₂,₃ = 3 m/s',f:'v₁,₃ = 4 + 3 = 7 m/s'},
+ {n:'v⃗ ngược dòng',a:[4,0],b:[-3,0],la:'v₁,₂ = 4 m/s',lb:'v₂,₃ = 3 m/s (ngược)',f:'v₁,₃ = |4 − 3| = 1 m/s'},
+ {n:'v⃗ vuông góc',a:[4,0],b:[0,3],la:'v₁,₂ = 4 m/s',lb:'v₂,₃ = 3 m/s',f:'v₁,₃ = √(4²+3²) = 5 m/s'}];
+const M3={ms:[['Vectơ thứ nhất',50],['Cả hai vectơ',100]],ctrl:MD.map((m,i)=>[m.n,s=>{s.x.m=i;s.p=0}]),
+ draw(s){const md=MD[s.x.m||0],a=md.a,b=md.b,sc=36,ox=50,oy=170,col=!a[1]&&!b[1],dy=col?16:0,k1=Math.min(1,s.p/50),k2=Math.max(0,Math.min(1,(s.p-50)/50));
+  const PX=x=>ox+x*sc,PY=y=>oy-y*sc;let h=`<text class="tx" x="10" y="18" fill="#0b5fa5">${md.la}</text><text class="tx" x="200" y="18" fill="#1a8a4a">${md.lb}</text>`;
+  if(k1>0)h+=ln(PX(0),PY(0),PX(a[0]*k1),PY(a[1]*k1),'#0b5fa5',3,'ar1');
+  if(k2>0)h+=ln(PX(a[0]),PY(a[1])+dy,PX(a[0]+b[0]*k2),PY(a[1]+b[1]*k2)+dy,'#1a8a4a',3,'ar2');
+  if(s.show&&k2>=1)h+=ln(PX(0),PY(0)-dy,PX(a[0]+b[0]),PY(a[1]+b[1])-dy,'#c0392b',3,'ar3');return h+`<circle cx="${ox}" cy="${oy}" r="3" fill="var(--tx)"/>`},
+ info(s){const md=MD[s.x.m||0];return `<b>${md.n}</b>: `+(s.show?md.f:'dự đoán độ lớn của vectơ tổng hợp (mũi tên đỏ)')}};
+/* M4: đồ thị d–t (0,0)→(2,4)→(4,4)→(8,−4) */
+const M4={ms:[['t = 2 s',25],['t = 4 s',50],['t = 8 s',100]],ctrl:[['⇄ Thêm / bớt đường s–t',s=>s.x.s=!s.x.s]],
+ dv(t){return t<=2?2*t:t<=4?4:4-2*(t-4)},sv(t){return t<=2?2*t:t<=4?4:4+2*(t-4)},
+ draw(s){const t=s.p/12.5,X=u=>40+u*42,Y=d=>130-d*10.5;let h=ln(40,Y(0),385,Y(0),'var(--mu)',1.3)+ln(40,12,40,180,'var(--mu)',1.3);
+  [0,2,4,6,8].forEach(u=>h+=`<text class="tx" x="${X(u)}" y="${Y(0)+13}" text-anchor="middle">${u}</text>`);
+  [-4,4,8,12].forEach(d=>h+=ln(37,Y(d),43,Y(d),'var(--mu)',1.2)+`<text class="tx" x="33" y="${Y(d)+4}" text-anchor="end">${d}</text>`);
+  h+=`<text class="mt" x="385" y="${Y(0)-5}" text-anchor="end">t (s)</text><text class="mt" x="46" y="12">d (m)</text>`;
+  const pts=[[0,0],[2,4],[4,4],[8,-4]].filter(p=>p[0]<t).concat([[t,this.dv(t)]]);
+  if(s.x.s){const q=[[0,0],[2,4],[4,4],[8,12]].filter(p=>p[0]<t).concat([[t,this.sv(t)]]);h+=`<polyline fill="none" stroke="#e67e22" stroke-width="2.5" stroke-dasharray="6 4" points="${q.map(p=>X(p[0])+','+Y(p[1])).join(' ')}"/>`}
+  return h+`<polyline fill="none" stroke="#0b5fa5" stroke-width="3" points="${pts.map(p=>X(p[0])+','+Y(p[1])).join(' ')}"/><circle cx="${X(t)}" cy="${Y(this.dv(t))}" r="6" fill="#c0392b"/>`},
+ info(s){const t=s.p/12.5,sg=t<=2?0:t<=4?1:2;return s.show?`t = ${f(t,1)} s · d = ${f(this.dv(t),1)} m`+(s.x.s?` · s = ${f(this.sv(t),1)} m`:'')+' · '+['đoạn đi lên: thẳng đều theo chiều dương, v = +2 m/s','đoạn nằm ngang: đứng yên, v = 0','đoạn dốc xuống: ngược chiều dương, v = −2 m/s (tốc độ 2 m/s)'][sg]:`t = ${f(t,1)} s · nhìn độ dốc của đoạn đồ thị: vật đang làm gì? v = ?`}};
+/* M5: cổng quang điện, MC964 (s_EF = 0,60 m; đường kính bi 2,0 cm) */
+const K5=[{n:'MODE A↔B',need:77,rd:'0,400',f:'v̄ = s/t = 0,60 / 0,400 = 1,5 m/s (tốc độ trung bình)'},
+ {n:'MODE A (cổng E)',need:30,rd:'0,0143',f:'v_E = d/t = 0,020 / 0,0143 ≈ 1,4 m/s (tốc độ tức thời)'},
+ {n:'MODE B (cổng F)',need:77,rd:'0,0125',f:'v_F = d/t = 0,020 / 0,0125 = 1,6 m/s (tốc độ tức thời)'},
+ {n:'✋ Bấm giây tay',need:77,rd:'0,40 ± 0,2',f:'v̄ từ 0,60/0,60 = 1,0 đến 0,60/0,20 = 3,0 m/s ⇒ sai số rất lớn!'}];
+const M5={ms:[['Thả bi',0],['Qua cổng E',32],['Qua cổng F',80]],ctrl:K5.map((k,i)=>[k.n,s=>s.x.k=i]),
+ draw(s){const k=K5[s.x.k||0],gx=p=>30+p*3.4,gy=p=>60+p*.9;let h=ln(gx(0),gy(0),gx(100),gy(100),'var(--mu)',3);
+  [[30,'E'],[77,'F']].forEach(a=>h+=`<rect x="${gx(a[0])-3}" y="${gy(a[0])-22}" width="6" height="34" fill="#8e44ad"/><text class="tx" x="${gx(a[0])}" y="${gy(a[0])-27}" text-anchor="middle">${a[1]}</text>`);
+  h+=`<circle cx="${gx(s.p)}" cy="${gy(s.p)-6}" r="6" fill="#c0392b"/><rect x="215" y="8" width="170" height="38" rx="5" fill="#111"/><text x="300" y="34" text-anchor="middle" fill="#3f3" style="font:bold 20px monospace">${s.p>=k.need?k.rd:'0,000'}</text><text class="mt" x="215" y="58">${k.n}</text>`;return h},
+ info(s){const k=K5[s.x.k||0];return s.show?k.f:`${k.n}: đọc số trên đồng hồ rồi tự tính tốc độ (s<sub>EF</sub> = 0,60 m; đường kính bi d = 2,0 cm)`}};
+/* ---------- Dạy thêm ở nhà: hình minh họa (trái) + lí thuyết điền khuyết (phải) ---------- */
+const B=t=>t.replace(/\{\{(.+?)\}\}/g,(m,a)=>`<span class="bk" data-a="${a.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"></span>`);
+const K=(t,it)=>`<div class="kn"><div class="kt">📘 ${t}</div><ul>${it.map(x=>`<li>${B(x)}</li>`).join('')}</ul></div>`;
+const W=(b,m)=>`<div class="kn wr"><ul><li>⚠️ <b>Bẫy thường gặp:</b> ${B(b)}</li><li>💡 <b>Mẹo ghi nhớ:</b> ${B(m)}</li></ul></div>`;
+const X=t=>`<div class="pr"><b>✏️ Luyện nhanh:</b> ${B(t)}</div>`;
+const T=(t,h,r)=>`<div class="kn"><div class="kt">📘 ${t}</div><div style="overflow-x:auto"><table class="tb"><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${r.map(a=>`<tr>${a.map(x=>`<td>${B(x)}</td>`).join('')}</tr>`).join('')}</table></div></div>`;
+const MM=id=>`<div class="md" id="${id}"></div>`;
+const PG=(h,L,R)=>`<div class="h"><span>${h}</span><span class="cnt"></span></div><p class="tip">👉 Quan sát hình bên trái, tự điền trước rồi bấm vào chỗ trống “……” để xem đáp án.</p><div class="g"><div class="L">${L}</div><div>${R}</div></div>`;
+const M3f=idx=>({ms:M3.ms,ctrl:idx.map(i=>[MD[i].n,s=>{s.x.m=i;s.p=0}]),draw(s){if(s.x.m==null)s.x.m=idx[0];return M3.draw.call(this,s)},info(s){if(s.x.m==null)s.x.m=idx[0];return M3.info.call(this,s)}});
+const S1=()=>{const ic=['🎯','👀','💡','🧪','✅'];let h='';ic.forEach((t,i)=>{const y=6+i*36;h+=`<circle cx="26" cy="${y+14}" r="13" fill="var(--pr)"/><text x="26" y="${y+19}" text-anchor="middle" fill="#fff" style="font:bold 14px sans-serif">${i+1}</text><text x="62" y="${y+22}" style="font-size:22px">${t}</text>`;if(i<4)h+=ln(26,y+28,26,y+44,'var(--mu)',2,'ar1')});
+ return `<svg viewBox="0 0 400 190">${DEF}${h}<path d="M110 132 C190 132 190 96 110 96" fill="none" stroke="#c0392b" stroke-width="2" marker-end="url(#ar3)"/><text class="tx" x="196" y="118" fill="#c0392b" style="font-size:14px">dự đoán sai → quay lại</text></svg>`};
+const SG=[['⚡','#f1c40f','Nguy hiểm điện'],['☠️','#ecf0f1','Chất độc'],['🔥','#e67e22','Dễ cháy'],['🏃','#27ae60','Lối thoát hiểm'],['☢️','#f1c40f','Chất phóng xạ'],['🧪','#ecf0f1','Chất ăn mòn'],['🚭','#c0392b','Nơi cấm lửa'],['🔴','#e74c3c','Cảnh báo tia laser']];
+const S2=`<div class="sg">${SG.map(s=>`<div class="sc"><div class="si" style="background:${s[1]}">${s[0]}</div><span class="bk" data-a="${s[2]}"></span></div>`).join('')}</div>`;
+const P=[];
+P[0]=PG('Bài 1 · Làm quen với Vật lí',`<div class="md">${S1()}</div>`,
+ K('Đối tượng nghiên cứu',['Vật lí nghiên cứu các dạng {{vận động}} của {{vật chất}} (chất, trường) và {{năng lượng}}.','CMCN lần 1 (TK {{XVIII}}): máy hơi nước của {{James Watt}} ({{1765}}), dựa trên nghiên cứu về {{Nhiệt}}, thay sức lực {{cơ bắp}} bằng sức lực máy móc.','CMCN lần 2 (cuối TK {{XIX}}): Faraday khám phá hiện tượng {{cảm ứng điện từ}} ⇒ {{máy phát điện}} ra đời, mở đầu kỉ nguyên sử dụng {{điện năng}}.','CMCN lần 3 (những năm {{70}} TK XX): {{tự động hóa}} sản xuất (dây chuyền tự động) nhờ {{điện tử, chất bán dẫn, vi mạch}}.','CMCN lần 4 (đầu TK {{XXI}}): {{trí tuệ nhân tạo (AI)}}, robot, internet toàn cầu, công nghệ {{nano}}, nhà máy thông minh.'])
+ +K('Lĩnh vực, mục tiêu và vai trò',['Lĩnh vực: {{Cơ học}}, {{Điện học}}, {{Điện từ học}}, {{Quang học}}, {{Âm học}}, {{Nhiệt học}}, {{Nhiệt động lực học}}, vật lí {{nguyên tử và hạt nhân}}, vật lí {{lượng tử}}, thuyết {{tương đối}}.','Mục tiêu môn học: (1) có kiến thức, kĩ năng {{cơ bản}} về vật lí; (2) {{vận dụng}} để khám phá, giải quyết vấn đề trong học tập và đời sống; (3) nhận biết {{năng lực, sở trường}} của bản thân, định hướng {{nghề nghiệp}}.','Với khoa học: Vật lí là cơ sở của {{khoa học tự nhiên}}, giải thích {{cơ chế}} các hiện tượng tự nhiên; sinh ra các lĩnh vực liên môn: Vật lí {{sinh học}}, Vật lí {{thiên văn}}, Vật lí {{địa lí}}, Hóa lí…','Tác động hai mặt: mang lại {{lợi ích}} to lớn nhưng dùng sai mục đích có thể gây {{ô nhiễm môi trường}}, hủy hoại hệ sinh thái, thảm họa {{vũ khí hạt nhân}}.'])
+ +K('Phương pháp thực nghiệm (5 bước – xem hình)',['① {{Xác định vấn đề}} → ② {{Quan sát, thu thập thông tin}} → ③ {{Dự đoán}} → ④ {{Thí nghiệm kiểm tra}} → ⑤ {{Kết luận}}.','Nếu dự đoán sai: đưa ra {{dự đoán mới}} hoặc xác định lại {{vấn đề}}. Người được coi là “cha đẻ” của phương pháp này: {{Galilei}} (thí nghiệm thả hai quả cầu ở tháp nghiêng {{Pisa}}, bác bỏ quan niệm của {{Aristotle}}).'])
+ +K('Phương pháp mô hình',['Mục đích: dùng mô hình để nghiên cứu, giải thích tính chất của vật thật, tìm {{cơ chế hoạt động}} của nó.','Mô hình {{vật chất}}: vật {{thu nhỏ hoặc phóng to}} của vật thật (quả địa cầu; hệ Mặt Trời là mô hình phóng to của mẫu nguyên tử {{Rutherford}}).','Mô hình {{lí thuyết}}: khái niệm, biểu tượng {{lí tưởng hóa}} (chất điểm, tia sáng).','Mô hình {{toán học}}: công thức, phương trình, đồ thị, kí hiệu (vectơ lực, vectơ độ dịch chuyển, s = v.t, đồ thị chuyển động).','4 bước: xác định {{đối tượng}} → {{xây dựng}} mô hình → kiểm tra, {{điều chỉnh}} → {{kết luận}}.'])
+ +W('đảo bước ③ và ④ (phải {{dự đoán}} trước rồi mới {{thí nghiệm}}); nhầm mô hình lí thuyết với mô hình toán học.','nhớ thứ tự “Vấn đề – Quan sát – Dự đoán – Thí nghiệm – Kết luận”.'));
+P[1]=PG('Bài 2 · Các quy tắc an toàn trong phòng thực hành',`<div class="md">${S2}</div>`,
+ K('Thiết bị và quy tắc',['Thiết bị {{điện}}: nguy cơ mất an toàn {{cao nhất}} (điện giật, chập cháy). Quan sát kĩ kí hiệu, nhãn thông số; dùng thiết bị đo điện phải chọn đúng {{chức năng}}, đúng {{thang đo}} (không vượt giới hạn đo), cắm dây đo đúng {{chốt}}.','Thiết bị {{nhiệt}} và {{thủy tinh}}: dễ gây {{bỏng}}, nứt, {{vỡ}}.','Thiết bị {{quang học}}: dễ mốc, xước, nứt, vỡ, dính bụi làm sai lệch đường truyền tia sáng. Tuyệt đối không chiếu tia {{laser}} vào {{mắt}}.'])
+ +K('Kí hiệu trên thiết bị',['DC hoặc “−”: dòng điện {{một chiều}}; AC hoặc “~”: dòng điện {{xoay chiều}}.','Màu đỏ hoặc “+”: cực {{dương}}; màu xanh hoặc “−”: cực {{âm}}.','Input / I: {{đầu vào}}; Output: {{đầu ra}}. Hai mũi tên hướng lên: dụng cụ đặt {{đứng}}; hình chiếc ly: dụng cụ dễ {{vỡ}}; thùng rác gạch chéo: {{không}} được bỏ vào thùng rác.','Còn có kí hiệu cảnh báo tia {{laser}}, nhiệt độ {{cao}}, {{từ trường}}, bình khí {{nén}} áp suất cao.'])
+ +K('Các biển báo an toàn (xem hình)',['Chất độc sức khỏe: hình {{đầu lâu xương chéo}}; nơi nguy hiểm về điện: {{tia sét}} trong tam giác {{vàng}}; lối thoát hiểm: nền {{xanh lá}}; chất dễ cháy: ngọn {{lửa}}.','Còn có: chất độc {{môi trường}}, chất {{ăn mòn}}, nơi cấm {{lửa}}, nơi có chất {{phóng xạ}}.'])
+ +K('10 quy tắc bắt buộc',['(1) Đọc kĩ {{hướng dẫn sử dụng}}, quan sát kí hiệu; (2) {{kiểm tra}} thiết bị trước khi dùng; (3) chỉ làm thí nghiệm khi có sự cho phép của {{giáo viên}}.','(4) {{Tắt công tắc nguồn}} trước khi cắm hoặc tháo thiết bị điện; (5) chỉ cắm phích khi hiệu điện thế nguồn {{tương ứng}} với hiệu điện thế {{định mức}} của dụng cụ; (6) bố trí dây điện {{gọn gàng}}.','(7) Không chạm trực tiếp vật nhiệt độ cao khi không có {{găng tay chịu nhiệt}}; (8) không để {{nước}}, dung dịch dẫn điện, chất {{dễ cháy}} gần thiết bị điện.','(9) Giữ {{khoảng cách an toàn}} khi nung nóng, có vật bắn ra, tia laser; (10) {{vệ sinh}}, sắp xếp dụng cụ, bỏ chất thải {{đúng nơi quy định}}.'])
+ +K('Chữa cháy và điện giật',['Khi có hỏa hoạn: {{ngắt}} toàn bộ hệ thống điện; đưa hóa chất {{dễ cháy}} ra khu vực an toàn.','KHÔNG dùng {{nước}} khi cháy thiết bị điện hoặc xăng, dầu, cồn.','KHÔNG dùng bình {{CO₂}} khi cháy quần áo trên người hoặc kim loại kiềm (Mg…).','Điện giật: {{ngắt nguồn}} hoặc dùng vật {{cách điện}} tách nạn nhân khỏi nguồn điện.'])
+ +W('dùng nước dập đám cháy điện hoặc xăng, dầu.','biển nền {{vàng}} có tia sét là nguy hiểm điện; nền {{xanh lá}} là lối thoát hiểm.'));
+P[2]=PG('Bài 3 · Sai số trong phép đo, ghi kết quả đo',MM('m3'),
+ K('Phân loại',['Đo {{trực tiếp}} (đọc trên dụng cụ); đo {{gián tiếp}} (qua công thức, ví dụ v = s/t).','Sai số {{hệ thống}} (sai số dụng cụ): do đặc điểm, cấu tạo của {{dụng cụ}} hoặc chưa hiệu chỉnh về vạch số {{0}}; ΔA_dc = {{½ ĐCNN}} hoặc giá trị do {{nhà sản xuất}} ghi trên dụng cụ.','Sai số {{ngẫu nhiên}}: lặp lại phép đo cho các giá trị {{khác nhau}}, không có nguyên nhân rõ ràng (thao tác chưa chuẩn, điều kiện không ổn định, hạn chế của giác quan); khắc phục: đo {{nhiều lần}}, tính giá trị {{trung bình}} và sai số.'])
+ +K('Biểu thức (kéo n trên mô hình rồi tự tính)',['Ā = {{(A₁ + … + Aₙ)/n}}; ΔAᵢ = {{|Ā − Aᵢ|}}; ΔĀ = {{trung bình các ΔAᵢ}}.','ΔA = {{ΔĀ + ΔA_dc}}; δA = {{ΔA/Ā · 100%}}; ghi kết quả: A = {{Ā ± ΔA}}.'])
+ +K('Phép đo gián tiếp',['Tổng/hiệu: ΔA = {{ΔB + ΔC}}. Tích/thương: δA = {{δB + δC}}. Có căn (A = B·√C): δA = {{δB + ½δC}}.','Ví dụ v = s/t: δv = {{δs + δt}} = (Δs/s̄ + Δt/t̄)·100%, suy ra Δv = {{δv · v̄}}.','Cách ghi: A = Ā ± ΔA; ΔA viết đến {{một hoặc hai}} chữ số có nghĩa (tới đơn vị của {{ĐCNN}}), Ā làm tròn đến bậc thập phân {{tương ứng với ΔA}}.'])
+ +K('7 đơn vị cơ bản SI',['{{m}} (độ dài), {{s}} (thời gian), {{kg}} (khối lượng), {{K}} (nhiệt độ), {{A}} (dòng điện), {{mol}} (lượng chất), {{cd}} (cường độ sáng).','Đơn vị dẫn xuất suy ra từ 7 đơn vị cơ bản: m/s, m/s², N = {{kg·m/s²}}, J = {{kg·m²/s²}}, Pa = {{kg/(m·s²)}}.','Rút đơn vị từ công thức: Bước 1: {{biến đổi}} công thức để biểu diễn đại lượng cần tìm; Bước 2: {{thay}} các đại lượng đã biết bằng đơn vị cơ bản (m, kg, s, A, K, mol, cd) và {{rút gọn}} lũy thừa.'])
+ +W('quên cộng {{ΔA_dc}}; làm tròn Ā không khớp bậc thập phân của ΔA.','nhớ “sai số = ΔĀ (ngẫu nhiên) + ΔA_dc (dụng cụ)”.')
+ +X('Đo 5 lần: 2,02; 1,98; 2,04; 2,00; 1,96 (s), ĐCNN 0,02 s ⇒ t = {{2,00 ± 0,03 s}}, δ ≈ {{1,7%}}.')+X('Hằng số G trong F = G·m₁m₂/r² ⇒ đơn vị của G là {{m³/(kg·s²)}}.'));
+P[3]=PG('Bài 4 · Độ dịch chuyển và quãng đường đi được',MM('m41')+MM('m42'),
+ K('Khái niệm',['Xác định vị trí: dùng hệ tọa độ {{vuông góc Oxy}} có gốc là vị trí {{vật mốc}} (trục hoành {{Tây – Đông}}, trục tung {{Bắc – Nam}}); vật chuyển động thẳng thì chọn trục {{Ox}} trùng với quỹ đạo.','Hệ quy chiếu = hệ tọa độ gắn {{vật mốc}} + mốc {{thời gian}} + {{đồng hồ}}.','Độ dịch chuyển d⃗: đại lượng {{vectơ}} cho biết độ dài và {{hướng}} của sự thay đổi vị trí; biểu diễn bằng mũi tên nối vị trí {{đầu – cuối}}; chuyển động thẳng: d = {{x₂ − x₁}} (có thể dương, âm hoặc {{bằng 0}}).','Quãng đường s: đại lượng {{vô hướng}}, s {{≥ 0}}.'])
+ +T('So sánh quãng đường và độ dịch chuyển',['Tiêu chí','Quãng đường s','Độ dịch chuyển d⃗'],[['Bản chất','{{Vô hướng}}','{{Vectơ}} (phương, chiều, độ lớn)'],['Ý nghĩa','Tổng độ dài {{toàn bộ quỹ đạo}} vật đã đi','Độ dài và hướng thay đổi vị trí {{từ điểm đầu đến điểm cuối}}'],['Giá trị','s {{≥ 0}}','d = x₂ − x₁, có thể {{âm}}'],['Liên hệ','s ≥ |d|','|d| = s khi {{thẳng, không đổi chiều}}; ngược lại |d| {{<}} s']])
+ +K('Điều kiện và tổng hợp độ dịch chuyển',['Quy tắc: các độ dịch chuyển liên tiếp cộng {{vectơ}}: d⃗ = {{d⃗₁ + d⃗₂}}.','s {{≥}} |d|; |d| = s khi vật chuyển động {{thẳng, không đổi chiều}}.','Cùng chiều: d = {{d₁ + d₂}}. Ngược chiều (quay đầu): chọn Ox theo chiều ban đầu, d = d₁ + d₂ với d₁ {{> 0}}, d₂ {{< 0}} ⇒ |d| = {{|d₁ − |d₂||}}.','Vuông góc (đi hướng Đông rồi rẽ hướng Bắc): d = {{√(d₁² + d₂²)}} (định lí {{Pythagore}}); hướng xác định bởi góc α: tanα = {{d₂/d₁}}.'])
+ +W('nhầm độ lớn d với s khi vật {{quay đầu}}; quên dấu của d.','“Đi – về”: s {{cộng dồn}}, d {{trừ lùi}}.')
+ +X('Đi 6 m về phía Đông rồi quay lại 2 m: s = {{8 m}}, d = {{4 m}}.'));
+P[4]=PG('Bài 5 · Tốc độ và vận tốc',MM('m5'),
+ K('Biểu thức',['Tốc độ trung bình: đại lượng {{vô hướng}} chỉ độ nhanh chậm; v = {{s/t}} = Δs/Δt = {{(s₂ − s₁)/(t₂ − t₁)}}.','Tốc độ tức thời: tốc độ tại một {{thời điểm}} (hoặc tốc độ trung bình trong Δt {{rất ngắn}}); tốc kế (công-tơ-mét) trên xe chỉ tốc độ {{tức thời}}.','Vận tốc trung bình: đại lượng {{vectơ}}; v⃗ = {{d⃗/t}} = Δd⃗/Δt. Vận tốc tức thời: v⃗ₜ = Δd⃗/Δt với Δt {{rất nhỏ}}.','Vectơ vận tốc: gốc nằm trên {{vật chuyển động}}; hướng là hướng của {{độ dịch chuyển}}; độ dài tỉ lệ với {{độ lớn}} của vận tốc.'])
+ +K('Điều kiện',['Thẳng, một hướng: v {{=}} |v⃗|. Cong hoặc đổi chiều: |v⃗| {{<}} v.'])
+ +K('Công thức cộng vận tốc (chọn từng trường hợp trên mô hình)',['v⃗₁,₃ = {{v⃗₁,₂ + v⃗₂,₃}}: v⃗₁,₂ là vận tốc {{tương đối}} (vật 1 đối với vật 2); v⃗₂,₃ là vận tốc {{kéo theo}} (vật 2 đối với vật 3 đứng yên); v⃗₁,₃ là vận tốc {{tuyệt đối}} (tổng hợp).','Cùng chiều (xuôi dòng): v₁,₃ = {{v₁,₂ + v₂,₃}}. Ngược chiều (ngược dòng): v₁,₃ = {{|v₁,₂ − v₂,₃|}}.','Vuông góc (ca nô hướng mũi {{vuông góc bờ sông}}): v₁,₃ = {{√(v₁,₂² + v₂,₃²)}}.'])
+ +W('cộng số học khi hai vận tốc {{vuông góc}}; nhầm thứ tự chỉ số 1,2 và 2,3.','chỉ số “nối đuôi”: (1,2) + (2,3) → (1,3), số {{2}} ở giữa triệt tiêu.')
+ +X('Ca nô v₁,₂ = 4 m/s, nước chảy v₂,₃ = 3 m/s, mũi ca nô vuông góc bờ ⇒ v₁,₃ = {{5 m/s}}.'));
+P[5]=PG('Bài 6 · Thực hành đo tốc độ của vật chuyển động',MM('m6'),
+ K('Dụng cụ',['Đồng hồ hiện số {{MC964}} (chính xác đến {{0,001 s}}); cổng {{quang điện}} (đóng vai trò như {{công tắc}} mở/đóng đồng hồ); {{nam châm điện}} và hộp công tắc kép để giữ/thả bi; máng nghiêng có thước đo {{độ dài}} và thước đo {{góc}}; bi thép; {{thước cặp}} đo đường kính bi.','Đồng hồ cần rung: rung khoảng {{50}} lần trong 1 giây, chấm dấu trên băng giấy gắn vào xe ⇒ khoảng thời gian giữa hai chấm liên tiếp Δt = 1/50 = {{0,02 s}}.'])
+ +K('Chế độ MODE',['MODE A (hoặc B): đo thời gian bi {{chắn cổng}} ⇒ tốc độ {{tức thời}}, v = {{d/t}}.','MODE A+B: đo {{tổng}} hai khoảng thời gian vật chắn cổng A và cổng B.','MODE A↔B: đo thời gian đi từ cổng A đến cổng B ⇒ tốc độ {{trung bình}}, v̄ = {{s/t}}.'])
+ +K('Hai phương án thực hành',['Phương án 1 (tốc độ {{trung bình}} giữa hai cổng E, F): nối E, F vào ổ A, B; chọn MODE {{A↔B}}; đo khoảng cách {{s}} bằng thước trên máng; thả bi từ nam châm, đọc thời gian {{t}}; lặp lại nhiều lần, tính v̄ = {{s̄/t̄}}.','Phương án 2 (tốc độ {{tức thời}} tại cổng E hoặc F): chọn MODE {{A (hoặc B)}}; đo đường kính {{d}} của bi bằng {{thước cặp}}; thả bi qua cổng, đọc thời gian {{t}} rất ngắn bi chắn chùm tia hồng ngoại; tính v = {{d̄/t̄}}.'])
+ +T('4 phương pháp đo tốc độ',['Phương pháp','Nguyên lí','Ưu điểm','Nhược điểm'],[['Đồng hồ bấm giây + thước','đo s, t rồi tính v = {{s/t}} (tốc độ {{trung bình}})','đơn giản, gọn nhẹ, {{rẻ}}, dễ làm ngoài hiện trường','sai số ngẫu nhiên {{lớn}} (phụ thuộc phản xạ người bấm); không đo được tốc độ {{tức thời}}'],['Cổng quang điện + đồng hồ hiện số','tia sáng tự {{kích hoạt và ngắt}} đồng hồ khi vật đi qua','chính xác đến {{0,001 s}}, loại bỏ sai số {{chủ quan}}','{{cồng kềnh, đắt}}; chỉ làm trong phòng thí nghiệm, vật nhỏ, quỹ đạo cố định'],['Súng bắn tốc độ','phát {{sóng điện từ/laser}}, thu sóng {{phản xạ}} để tính tốc độ tức thời','đo nhanh, chính xác, {{từ xa}}','giá cao; ảnh hưởng bởi {{góc bắn, vật cản, thời tiết}}'],['Tốc kế (công-tơ-mét)','đo tốc độ {{quay}} của trục bánh xe, hiển thị tốc độ {{tức thời}}','theo dõi {{liên tục}} tại mọi thời điểm','chỉ đo cho {{chính xe}} gắn thiết bị; sai số khi {{lốp mòn}}']])
+ +W('nhầm MODE A với MODE A↔B; quên đo {{đường kính}} bi.','một cổng ⇒ tức thời; hai cổng (A↔B) ⇒ {{trung bình}}.')
+ +X('Bi đường kính 2,0 cm chắn cổng E trong 0,0143 s ⇒ v_E ≈ {{1,4 m/s}}.'));
+P[6]=PG('Bài 7 · Đồ thị độ dịch chuyển – thời gian',MM('m7'),
+ K('Nhận dạng chuyển động từ đồ thị d–t',['Đoạn đi lên: thẳng đều theo chiều {{dương}} (v {{> 0}}). Đoạn nằm ngang: vật {{đứng yên}} (v = {{0}}).','Đoạn dốc xuống: chuyển động {{ngược}} chiều dương (v {{< 0}}). Đỉnh chuyển từ lên sang xuống: vật {{đổi chiều}}.'])
+ +K('Dấu của d, v và cách vẽ đồ thị',['Thẳng, {{không đổi chiều}} (theo chiều dương): d = s {{> 0}}; tốc độ và vận tốc có độ lớn {{bằng nhau}}.','Đi {{ngược chiều dương}}: s vẫn {{dương}}, tốc độ vẫn dương, nhưng Δd {{< 0}} và v = −tốc độ {{< 0}}.','Vẽ đồ thị d–t: trục tung là {{d}} (m hoặc km), trục hoành là {{t}} (s hoặc h), chọn {{tỉ xích}} phù hợp; xác định các điểm (t, d) rồi {{nối}} các điểm liên tiếp.'])
+ +K('Biểu thức',['v = {{Δd/Δt}} = {{(d₂ − d₁)/(t₂ − t₁)}}; tốc độ = {{|v|}}.','Đồ thị dốc càng lớn thì vật chuyển động càng {{nhanh}}.'])
+ +W('đồ thị đi xuống chỉ là v {{âm}}, chưa phải chậm lại; nhầm đồ thị d–t với {{quỹ đạo}}.','“Dốc là {{vận tốc}}”.')
+ +X('d = 4 m lúc t = 4 s và d = −4 m lúc t = 8 s ⇒ v = {{−2 m/s}}, tốc độ = {{2 m/s}}.'));
+P[7]=PG('Các dạng bài tập trọng tâm ôn thi giữa kì I',`<div class="sg">${[['📏','Dạng 1','Sai số – SI'],['🧭','Dạng 2','s, d, v'],['📈','Dạng 3','Đồ thị d–t'],['🚤','Dạng 4','Tổng hợp d, v']].map(s=>`<div class="sc"><div class="si">${s[0]}</div><b>${s[1]}</b><br>${s[2]}</div>`).join('')}</div>`,
+ K('Dạng 1 · Trắc nghiệm Hiểu (Chủ đề 1)',['Tính sai số tuyệt đối ΔA = {{ΔĀ + ΔA_dc}}, sai số tỉ đối δA = {{ΔA/Ā · 100%}} của phép đo {{trực tiếp}} và {{gián tiếp}}.','Rút ra {{đơn vị}} của đại lượng/hằng số theo {{7 đơn vị cơ bản}} của hệ SI.'])
+ +K('Dạng 2 · Trắc nghiệm và tự luận (Chủ đề 2)',['Xác định quãng đường s, độ dịch chuyển d, tốc độ trung bình v = {{s/t}} và vận tốc trung bình v = {{d/t}}.','Vật chuyển động thẳng trên trục Ox (có {{đổi chiều}}) hoặc theo quỹ đạo gấp khúc {{vuông góc}}.'])
+ +K('Dạng 3 · Trắc nghiệm và tự luận (Chủ đề 2)',['Từ bảng số liệu {{vẽ}} đồ thị d–t; hoặc từ đồ thị cho sẵn {{mô tả}} chuyển động.','So sánh tốc độ giữa các giai đoạn: độ dốc càng {{lớn}} thì càng {{nhanh}}; tính v = {{Δd/Δt}}, tốc độ = {{|v|}}.'])
+ +K('Dạng 4 · Trắc nghiệm Vận dụng và tự luận (Chủ đề 2)',['Tổng hợp độ dịch chuyển: d⃗ = {{d⃗₁ + d⃗₂}}.','Tổng hợp vận tốc: v⃗₁,₃ = {{v⃗₁,₂ + v⃗₂,₃}} cho ca nô, thuyền: {{xuôi dòng}}, {{ngược dòng}}, {{vuông góc}} với dòng nước; máy bay bay trong {{gió}}.']));
+const TB=['Bài 1 Làm quen','Bài 2 An toàn','Bài 3 Sai số','Bài 4 d và s','Bài 5 Tốc độ, vận tốc','Bài 6 Đo tốc độ','Bài 7 Đồ thị d–t','Dạng bài'];
+$('#M').innerHTML=P.map((x,i)=>`<section class="p" id="p${i}">${x}</section>`).join('');
+$('#tabs').innerHTML=TB.map((t,i)=>`<button class="b" id="t${i}">${t}</button>`).join('');
+[['m3',M2],['m41',M1],['m42',M3f([0,1])],['m5',M3f([2,3,4])],['m6',M5],['m7',M4]].forEach(a=>mk(a[0],a[1]));
+let cur=0;
+function upd(){document.querySelectorAll('.p').forEach(s=>{s.querySelector('.cnt').textContent=`Đã mở ${s.querySelectorAll('.bk.on').length}/${s.querySelectorAll('.bk').length} chỗ trống`});const a=[...$('.p.on').querySelectorAll('.bk')];$('#fa').textContent=a.every(x=>x.classList.contains('on'))?'🙈':'👁'}
+function show(i){cur=i;TB.forEach((_,j)=>{$('#p'+j).classList.toggle('on',j==i);$('#t'+j).classList.toggle('on',j==i)});$('#t'+i).scrollIntoView({inline:'nearest',block:'nearest'});window.scrollTo(0,0);upd()}
+TB.forEach((_,i)=>$('#t'+i).onclick=()=>show(i));
+document.addEventListener('click',e=>{const b=e.target.closest('.bk');if(b){b.classList.toggle('on');upd()}});
+document.addEventListener('keydown',e=>{if(/TEXTAREA|INPUT/.test(e.target.tagName)&&e.target.type!='range')return;if(e.key=='ArrowRight')show(Math.min(TB.length-1,cur+1));if(e.key=='ArrowLeft')show(Math.max(0,cur-1))});
+let fs=22;const sf=n=>{fs=Math.max(14,Math.min(44,n));document.documentElement.style.setProperty('--fs',fs+'px');$('#fn').textContent=fs};
+$('#fm').onclick=()=>sf(fs-2);$('#fp').onclick=()=>sf(fs+2);$('#fn').onclick=()=>sf(22);
+$('#fa').onclick=()=>{const a=[...$('.p.on').querySelectorAll('.bk')],o=!a.every(x=>x.classList.contains('on'));a.forEach(x=>x.classList.toggle('on',o));upd()};
+$('#fd').onclick=()=>document.body.classList.toggle('dark');
+if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)document.body.classList.add('dark');
+show(0);
+</script></body></html>
